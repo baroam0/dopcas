@@ -9,7 +9,7 @@ class Inspector(models.Model):
 
     def __str__(self):
         return self.apellido + ", " + self.nombre
-    
+
     class Meta:
         verbose_name_plural = "Inspectores"
 

@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+
+<style>
+    @page {
+        size: Legal;
+        margin: 0;
+    }
+</style>
+
+{% block content%}
+
+    {{resultado.monotributista.apellido.upper}}      
+    {{resultado.monotributista.domicilio}}  
+    {{resultado.fecha_inicio}}
+    {{resultado.fecha_fin}}
+
+{% endblock %}

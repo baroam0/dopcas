@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from apps.contratomonotributistas.views import detallecontrato
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('detalle/', detallecontrato),
 ]

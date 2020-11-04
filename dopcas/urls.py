@@ -20,5 +20,5 @@ from apps.contratomonotributistas.views import detallecontrato
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('detalle/', detallecontrato),
+    path('detalle/<int:pk>/', detallecontrato),
 ]

@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+
+{% block content%}
+	<form>
+		<table>
+			{% for r in resultado%}
+				{{r}}
+			{% endfor %}
+		</table>
+	</form>
+
+
+{% endblock %}

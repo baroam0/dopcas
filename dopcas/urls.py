@@ -17,8 +17,14 @@ from django.contrib import admin
 from django.urls import path
 
 from apps.contratomonotributistas.views import detallecontrato
+from apps.monotributistas.views import listadomonotributista
+from dopcas.views import inicio
+
 
 urlpatterns = [
+    path('', inicio),
     path('admin/', admin.site.urls),
     path('detalle/<int:pk>/', detallecontrato),
+    path('listadomonotributista/', listadomonotributista),
 ]
+

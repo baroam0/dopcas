@@ -1,5 +1,5 @@
-from django.db import models
 
+from django.db import models
 
 class Monotributista(models.Model):
     apellido = models.CharField(max_length=70, blank=False, null=False)

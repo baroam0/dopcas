@@ -21,16 +21,15 @@ def listadomonotributista(request):
 
 def nuevomonotributista(request):
     if request.POST:
-        form = PrestacionForm(request.POST)
+        form = MonotributistaForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "SE HA GRABADO LA PRESTACION")
-            return redirect('/prestacionlistado')
+            return redirect('/listadomonotributista')
         else:
-            return render(request, 'obrassociales/prestacion_edit.html', {"form": form})
+            return render(request, 'monotributistas/editar_monotributista.html', {"form": form})
     else:
-        form = PrestacionForm()
-        return render(request, 'obrassociales/prestacion_edit.html', {"form": form})
+        form = MonotributistaForm()
+        return render(request, 'monotributistas/editar_monotributista.html', {"form": form})
 
 
 def editarmonotributista(request, pk):
@@ -49,9 +48,6 @@ def editarmonotributista(request, pk):
     else:
         form = MonotributistaForm(instance=consulta)
         return render(request, 'monotributistas/editar_monotributista.html', {"form": form})
-
-
-
 
 
 # Create your views here.

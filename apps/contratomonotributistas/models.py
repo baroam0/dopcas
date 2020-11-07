@@ -8,8 +8,8 @@ from apps.tiposcontratos.models import TipoContrato
 class ContratoMonotributista(models.Model):
     tipocontrato = models.ForeignKey(TipoContrato, on_delete=models.CASCADE)
     monotributista = models.ForeignKey(Monotributista, on_delete=models.CASCADE)
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
+    fecha_inicio = models.DateField(null=False, blank=False)
+    fecha_fin = models.DateField(null=False, blank=False)
     monto_mensual = models.DecimalField(decimal_places=2, max_digits=15)
 
     def __str__(self):

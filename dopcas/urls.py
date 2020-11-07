@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from apps.contratomonotributistas.views import detallecontrato
-from apps.monotributistas.views import listadomonotributista, editarmonotributista, nuevomonotributista
+from apps.contratomonotributistas.views import (detallecontrato,
+    listadocontratomonotributista, nuevocontratomonotributista)
+from apps.monotributistas.views import (listadomonotributista,
+    editarmonotributista, nuevomonotributista)
 from dopcas.views import inicio
 
 
@@ -25,6 +27,8 @@ urlpatterns = [
     path('', inicio),
     path('admin/', admin.site.urls),
     path('detalle/<int:pk>/', detallecontrato),
+    path('listadocontratomonotributista/', listadocontratomonotributista),
+    path('nuevocontratomonotributista/', nuevocontratomonotributista),
     path('listadomonotributista/', listadomonotributista),
     path('nuevomonotributista/', nuevomonotributista),
     path('editarmonotributista/<int:pk>', editarmonotributista),

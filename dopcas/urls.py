@@ -26,7 +26,7 @@ from dopcas.views import inicio
 urlpatterns = [
     path('', inicio),
     path('admin/', admin.site.urls),
-    path('detalle/<int:pk>/', detallecontrato),
+    path('detallecontrato/<int:pk>/', detallecontrato),
     path('listadocontratomonotributista/', listadocontratomonotributista),
     path('nuevocontratomonotributista/', nuevocontratomonotributista),
     path('listadomonotributista/', listadomonotributista),

@@ -17,7 +17,8 @@
 				<th>Apellido y Nombre</th>
 				<th>Fecha Inicio</th>
 				<th>Fecha Fin</th>
-				<th>Accion</th>
+				<th>Editar</th>
+				<th>Ver</th>
 			</thead>
 			{% for resultado in resultados %}
 				<tr>
@@ -25,6 +26,7 @@
 					<td>{{resultado.fecha_inicio}}  </td>
 					<td>{{resultado.fecha_fin}}  </td>
 					<td><a href="/editarcontratomonotributista/{{resultado.pk}}">Editar</a> </td>
+					<td><a href="/detallecontrato/{{resultado.pk}}">Ver</a> </td>
 				</tr>
 			{% endfor %}
 		  </table>

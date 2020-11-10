@@ -2,19 +2,19 @@
 {% extends "base.html" %}
 
 {% block content%}
-	
 	<form action="/listadomonotributista" method="GET">
-		<br>
+
 		<br>
 		<input id="txtbuscar" name="txtbuscar">
 		<br>
-		<br>
+
 		<button type="submit">Buscar</button>
 
 		<button type="button" onclick="location.href='/nuevomonotributista';">Nuevo</button>
 
 		<br>
 		<br>
+
 		<table style="width:100%">
 			{% for resultado in resultados %}
 				<tr>

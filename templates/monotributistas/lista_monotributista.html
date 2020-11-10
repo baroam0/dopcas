@@ -10,14 +10,14 @@
 		<br>
 		<br>
 		<button type="submit">Buscar</button>
-		<button type="button" onclick="location.href='https://google.com';">Nuevo</button>
+		<button type="button" onclick="window.location.href='/nuevomonotributista';">Nuevo</button>
 		<br>
 		<br>
 		<table style="width:100%">
 			{% for resultado in resultados %}
 				<tr>
 					<td>{{resultado.apellido.upper}}, {{resultado.nombre.upper}}  </td>
-					<td><a href="/editarmonotributista/{{resultado.pk}}">Editar</a> </td>
+					<td><a href="/editarmonotributista/{{resultado.pk}}">Editar</a> </td>  
 				</tr>
 			{% endfor %}
 

@@ -1,0 +1,27 @@
+
+
+{% extends "base.html" %}
+
+{% block content%}
+
+	<h3 align="center">DETALLE CONTRATO MONOTRIBUTISTA</h3>
+	<form  method="POST">{% csrf_token %}
+		{{ form.as_p}}
+		<hr>
+
+		<button id="btn-guardar" type="submit">
+			Aceptar
+		</button>
+
+		<button type="button" id="btn-cancelar" onclick="IrListadoContratoMonotributista()">
+			Cancelar
+		</button>
+	</form>
+
+	<script>
+		function IrListadoContratoMonotributista() {
+            window.location.replace("/listadocontratomonotributista");
+        }
+
+	</script>
+{% endblock %}

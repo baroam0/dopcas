@@ -50,7 +50,4 @@ def editarmonotributista(request, pk):
         return render(request, 'monotributistas/editar_monotributista.html', {"form": form})
 
 
-
-
-
 # Create your views here.

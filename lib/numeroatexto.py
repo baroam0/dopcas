@@ -9,3 +9,8 @@ def numtxt(valor):
     resultado = str(valor_entero).upper() + " CON " + str(valor_total[1]) + "/100 CENTAVOS"
     return resultado
 
+
+def numerotxt(valor):
+    valor_letras = num2words(int(valor), lang="es").upper()
+    return valor_letras
+

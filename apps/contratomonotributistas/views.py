@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from .forms import ContratoMonotributistaForm
 from .models import ContratoMonotributista
 from apps.tiposcontratos.models import TipoContrato
-from lib.numeroatexto import numtxt
+from lib.numeroatexto import numtxt, numerotxt
 from lib.cuentames import totalmes
 
 
@@ -13,7 +13,9 @@ def detallecontrato(request, pk):
     tipocontrato = TipoContrato.objects.get(pk=int(resultado.tipocontrato.pk))
     plazo = totalmes(resultado.fecha_inicio, resultado.fecha_fin)
     montocontrato = plazo * resultado.monto_mensual
+    letramontomensual = numtxt(resultado.monto_mensual)
     letramontocontrato = numtxt(montocontrato)
+    letraplazo = numerotxt(int(plazo))
     
     if tipocontrato.descripcion == "Contrato Administrativo":
         return render(
@@ -23,7 +25,9 @@ def detallecontrato(request, pk):
                 "resultado": resultado,
                 "plazo": plazo,
                 "montocontrato": montocontrato,
-                "letramontocontrato": letramontocontrato
+                "letramontocontrato": letramontocontrato,
+                "letramontomensual" : letramontomensual,
+                "letraplazo": letraplazo
             }
         )
 

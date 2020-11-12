@@ -31,6 +31,20 @@ def detallecontrato(request, pk):
             }
         )
 
+    if tipocontrato.descripcion == "Contrato Maquinista":
+        return render(
+            request,
+            "tiposcontratos/contrato_maquinista.html",
+            {
+                "resultado": resultado,
+                "plazo": plazo,
+                "montocontrato": montocontrato,
+                "letramontocontrato": letramontocontrato,
+                "letramontomensual" : letramontomensual,
+                "letraplazo": letraplazo
+            }
+        )
+
 
 def listadocontratomonotributista(request):
     if "txtbuscar" in request.GET:
@@ -73,7 +87,7 @@ def editarcontratomonotributista(request, pk):
                 {"form": form}
             )
     else:
-        form = MonotributistaForm(instance=consulta)
+        form = ContratoMonotributistaForm(instance=consulta)
         return render(request, 'contratomonotributistas/editar_contratomonotributista.html', {"form": form})
 
 

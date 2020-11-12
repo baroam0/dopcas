@@ -6,6 +6,19 @@
         size: Legal;
         margin: 0;
     }
+	
+	@media print {
+		html, body {
+			width: 210mm;
+			height: 297mm;
+		}
+	}
+	 
+	html{
+		border: solid;
+	}
+	
+	
 </style>
 
 {% block content%}

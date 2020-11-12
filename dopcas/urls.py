@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from apps.contratomonotributistas.views import (detallecontrato,
-    listadocontratomonotributista, nuevocontratomonotributista). editarcontratomonotributista
+    listadocontratomonotributista, nuevocontratomonotributista, editarcontratomonotributista)
 
 from apps.monotributistas.views import (listadomonotributista,
     editarmonotributista, nuevomonotributista)

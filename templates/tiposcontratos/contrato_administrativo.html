@@ -30,7 +30,7 @@
 			text-justify: inter-word;
 		}
 
-		h3 {
+		h2 {
 			text-align: center;
 			text-justify: inter-word;
 		}
@@ -41,7 +41,7 @@
 
 		<div class="page">
  
-			<h3>CONTRATO  DE LOCACI&Oacute;N DE SERVICIOS</h3>
+			<h2>CONTRATO  DE LOCACI&Oacute;N DE SERVICIOS</h2>
 			
 			<br>
  
@@ -51,7 +51,7 @@
 				<b> DR. MAURICIO HERNAN NADALICH </b> - DNI: 26694334,
 				con domicilio legal en la calles San Martin N&deg; 750 de esta ciudad, en adelante LA MUNICIPALIDAD, por una parte;
 				y por la otra <b> {{resultado.monotributista.nombre.upper}}, {{resultado.monotributista.apellido.upper}}  </b> - 
-				DNI: {{resultado.monotributista.numerodocumento}} con domicilio real en Calle La Rioja N&deg; 346 de la
+				DNI: {{resultado.monotributista.numerodocumento}} con domicilio real en {{resultado.monotributista.domicilio.upper}} de la
 				Ciudad de Formosa en adelante el PRESTADOR DE SERVICIOS, conviene celebrar el presente
 				CONTRATO DE LOCACI&Oacute;N DE SERVICIOS, sujetos a las siguientes cl&aacute;usulas: 
 			</p>
@@ -84,7 +84,7 @@
 			</p>
 
 			<p>
-				<b> QUINTA: </b>> Los d&iacute;as de trabajo y horarios ser&aacute;n asignados y fiscalizados de acuerdo a los m&eacute;todos e 
+				<b> QUINTA: </b> Los d&iacute;as de trabajo y horarios ser&aacute;n asignados y fiscalizados de acuerdo a los m&eacute;todos e 
 				instrucciones que disponga LA MUNICIPALIDAD. 
 			</p>
 
@@ -145,7 +145,7 @@
 
 			<p>	
 				<b> DECIMA QUINTA: </b> Las partes constituyen domicilio a todos los efectos legales en los que se mencionan a continuaci&oacute;n: 
-				LA MUNICIPALIDAD en calle San Martin N&deg; 750 y EL PRESTADOR DE SERVICIOS en Calle La Rioja N&deg; 346, ambos en la ciudad de Formosa.
+				LA MUNICIPALIDAD en calle San Martin N&deg; 750 y EL PRESTADOR DE SERVICIOS en {{resultado.monotributista.domicilio.upper}}, ambos en la ciudad de Formosa.
 			</p>
 
 			<p>	

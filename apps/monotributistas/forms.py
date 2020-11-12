@@ -8,7 +8,7 @@ class MonotributistaForm(forms.ModelForm):
     apellido = forms.CharField(label="Apellido", required=True)
     nombre = forms.CharField(label="Nombre", required=False)
     numerodocumento = forms.CharField(label="Nro Documento", required=True)
-    cuit = forms.CharField(label="CUIT", required=True)
+    cuit = forms.CharField(label="CUIT", required=False)
     domicilio = forms.CharField(label="Domicilio", required=True)
 
     def __init__(self, *args, **kwargs):

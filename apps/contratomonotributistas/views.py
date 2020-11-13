@@ -44,8 +44,22 @@ def detallecontrato(request, pk):
                 "letraplazo": letraplazo
             }
         )
+    
+    if tipocontrato.descripcion == "Contrato Tecnico":
+        return render(
+            request,
+            "tiposcontratos/contrato_tecnico.html",
+            {
+                "resultado": resultado,
+                "plazo": plazo,
+                "montocontrato": montocontrato,
+                "letramontocontrato": letramontocontrato,
+                "letramontomensual" : letramontomensual,
+                "letraplazo": letraplazo
+            }
+        )
 
-
+    
 def listadocontratomonotributista(request):
     if "txtbuscar" in request.GET:
         parametro = request.GET.get("txtbuscar")

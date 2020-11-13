@@ -1,0 +1,148 @@
+
+<html>
+
+	<style>
+
+		div {
+			text-align: justify;
+			text-justify: inter-word;
+		}
+
+		h3 {
+			text-align: center;
+			text-justify: inter-word;
+		}
+
+	</style>
+	
+	<body>
+
+		<div class="page">
+ 
+			<h3>CONTRATO  DE LOCACI&Oacute;N DE SERVICIOS</h3>
+
+			<p>
+				En la Ciudad de Formosa, Capital de la Provincia del mismo nombre, entre la Municipalidad de la
+				Ciudad de Formosa, representada en este acto por el Sr. Jefe de gabinete,
+				<b> DR. MAURICIO HERNAN NADALICH </b> - DNI: 26694334,
+				con domicilio legal en la calles San Martin N&deg; 750 de esta ciudad, en adelante LA MUNICIPALIDAD, por una parte;
+				y por la otra <b> {{resultado.monotributista.nombre.upper}}, {{resultado.monotributista.apellido.upper}}  </b> - 
+				DNI: {{resultado.monotributista.numerodocumento}} con domicilio real en {{resultado.monotributista.domicilio.upper}} de la
+				Ciudad de Formosa en adelante el PRESTADOR DE SERVICIOS, conviene celebrar el presente
+				CONTRATO DE LOCACI&Oacute;N DE SERVICIOS, sujetos a las siguientes cl&aacute;usulas: 
+			</p>
+			
+			<p>
+				<b>PRIMERA:</b> El PRESTADOR DE SERVICIOS se desempe&ntilde;ara en el &aacute;mbito de la DIRECCI&Oacute;N DE OBRAS PUBLICAS,
+				en los d&iacute;as y horarios establecidos por &eacute;sta y oblig&aacute;ndose a cumplir las siguientes tareas:
+				<b>{{resultado.tipocontrato.tareascontrato}} </b> las que se ser&aacute;n encomendadas por dicha direcci&oacute;n.
+			</p>
+			
+			<p>
+				<b>SEGUNDA:</b> El presente contrato tendr&aacute; una vigencia de {{letraplazo}} ({{plazo}}) meses contados a partir del d&iacute;a
+				{{resultado.fecha_inicio|date:"d F Y"}} hasta el {{resultado.fecha_fin|date:"d F Y"}} inclusive, y podr&aacute; ser prorrogado con el consentimiento fehaciente de ambas partes si las necesidades de la municipalidad as&iacute; lo requieran.
+			</p>
+
+			<p>
+				<b>TERCERA: </b> El monto total del contrato asciende a la suma de <b>
+				PESOS: {{ letramontocontrato.upper }} ($ {{montocontrato}}) </b>, monto que LA MUNICIPALIDAD
+				abonara {{letraplazo}} ({{plazo}}) cuotas de <b> PESOS: {{letramontomensual.upper}} ($ {{resultado.monto_mensual}}).</b>
+
+			</p>
+
+			<p>
+				<b>CUARTA: </b> LA MUNICIPALIDAD abonar&aacute; dicha suma contra entrega de factura por los servicios
+				prestados, que se presentara el &uacute;ltimo d&iacute;a del mes o d&iacute;a h&aacute;bil posterior si aquel resulte inh&aacute;bil.
+				En consecuencia se suscribir&aacute;n certificaciones de trabajo por duplicado, quedando una copia en poder del
+				PRESTADOR DE SERVICIOS y la otra en el Expediente de pago correspondiente. Dichas certificaciones ser&aacute;n 
+				confeccionadas por la Direcci&oacute;n de de Obras P&uacute;blicas, &aacute;rea pertinente y los pagos se efectuaran a 
+				partir del d&iacute;a quince del mes siguiente.
+			</p>
+
+			<p>
+				<b> QUINTA: </b> Los d&iacute;as de trabajo y horarios ser&aacute;n asignados y fiscalizados de acuerdo a los m&eacute;todos e 
+				instrucciones que disponga LA MUNICIPALIDAD. 
+			</p>
+
+			<p>
+				<b> SEXTA: </b>> Las tareas encomendadas por LA MUNICIPALIDAD deber&aacute;n ser realizadas por EL PRESTADOR DE SERVICIOS
+			no pudiendo delegar a terceros.
+			</p>
+
+			<p>
+				<b> S&Eacute;PTIMA: </b> EL PRESTADOR DE SERVICIOS deber&aacute; comunicar de forma fehaciente, cualquier circunstancia que le
+			impida la realizaci&oacute;n del servicio para el cual fue contratado, pudi&eacute;ndose proceder al descuento
+			correspondiente y equivalente a los d&iacute;as improductivos salvo que sean debidamente recuperados con previo aviso
+			y autorizados por su &aacute;rea de dependencia.
+			</p>
+
+			<p>
+				<b> OCTAVA: </b> Las partes se reservan el derecho de rescindir anticipadamente el presente contrato sin que las mismas originen
+				a favor del otro derecho de indemnizaci&oacute;n alguna. Dicha rescisi&oacute;n deber&aacute; ser comunicada a la otra 
+				parte con una anticipaci&oacute;n de treinta (30) d&iacute;as corridos.
+			</p>
+
+			<p>	
+				<b> NOVENA: </b> Se consideran causales para rescindir el presente contrato, el Incumplimiento reiterado del horario designado;
+			Ofensas verbales y/o agresiones f&iacute;sicas a sus pares y superiores; Abandono del lugar de prestaci&oacute;n de
+			servicio sin autorizaci&oacute;n de su superior inmediato y cualquier otra conducta que la MUNICIPALIDAD CONSIDERE
+			inapropiada o de negligencia en el cumplimiento de sus funciones.
+			</p>
+
+			<p>	
+				<b> DECIMA: </b> LA MUNICIPALIDAD podr&aacute; considerar rescindido el contrato, en caso de inasistencias injustificadas 
+			que excedan los cinco (5) d&iacute;as corridos, o diez (10) inasistencias discontinuas en el per&iacute;odo de 
+			duraci&oacute;n del presente contrato o desempe&ntilde;o ineficiente en la realizaci&oacute;n del servicio para el
+			cual que fue contratado.
+			</p>
+
+			<p>	
+				<b> DECIMA PRIMERA: </b> Cuando por razones particulares LA MUNICIPALIDAD, necesite ampliar el horario de prestaci&oacute;n de 
+				servicios, podr&aacute; incrementar el monto mensual del presente contrato de acuerdo a la complejidad de la tarea que 
+				fuera encomendada al PRESTADOR DE SERVICIOS. Este incremento no podr&aacute; exceder el Cuarenta y cinco por Ciento (45%), 
+				de dicho monto contractual mensual.
+			</p>
+
+			<p>	
+				<b>DECIMA SEGUNDA: </b> El pago del sellado del presente contrato estar&aacute; a cargo del prestador de servicio. 
+			</p>
+
+			<p>	
+				<b>DECIMA TERCERA: </b> EL PRESTADOR DE SERVICIOS no podr&aacute; ceder los derechos originados en el presente contrato bajo
+				ning&uacute;n concepto, ni por acto o instrumento de ninguna naturaleza, sin previa ni expresa autorizaci&oacute;n de
+				LA MUNICIPALIDAD.
+			</p>
+
+			<p>	
+			    <b> DECIMA CUARTA: </b> A los fines que se suceden una eventual cuesti&oacute;n litigiosa entre las partes en referencia a la
+				realizaci&oacute;n nacida del presente contrato ambas partes convienen someterse a los tribunales ordinarios de la primera
+				circunscripci&oacute;n judicial de la provincia de Formosa, renunciando expresamente a cualquier otro fuero.
+			</p>
+
+			<p>	
+				<b> DECIMA QUINTA: </b> Las partes constituyen domicilio a todos los efectos legales en los que se mencionan a continuaci&oacute;n: 
+				LA MUNICIPALIDAD en calle San Martin N&deg; 750 y EL PRESTADOR DE SERVICIOS en {{resultado.monotributista.domicilio.upper}}, ambos en la ciudad de Formosa.
+			</p>
+
+			<p>	
+				En prueba de conformidad, se firman dos (2) ejemplares de un mismo tenor e igual efecto en la ciudad de Formosa,
+				a los _____ d&iacute;as del mes de _________________ del 2020.
+			</p>
+			
+			<br><br><br><br><br><br><br><br>
+			
+			<p>	
+				EL PRESTADOR DE SERVICIO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				LA MUNICIPALIDAD
+			</p>
+
+			
+
+</div>
+
+</body>
+
+</html>

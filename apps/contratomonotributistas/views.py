@@ -104,5 +104,7 @@ def editarcontratomonotributista(request, pk):
         form = ContratoMonotributistaForm(instance=consulta)
         return render(request, 'contratomonotributistas/editar_contratomonotributista.html', {"form": form})
 
+def f16b(request):
+    return render(request, 'tiposcontratos/f16b.html')
 
 # Create your views here.

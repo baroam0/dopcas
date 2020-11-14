@@ -9,7 +9,7 @@ class Monotributista(models.Model):
     domicilio = models.CharField(max_length=500, blank=False, null=False)
 
     def __str__(self):
-        return self.apellido + ', ' + self.nombre
+        return self.apellido.upper() + ', ' + self.nombre.upper()
 
     class Meta:
         verbose_name_plural = "Monotributistas"

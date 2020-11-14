@@ -1,0 +1,83 @@
+
+<html>
+
+	<style>
+
+		div {
+			text-align: justify;
+			text-justify: inter-word;
+		}
+
+		h3 {
+			text-align: center;
+			text-justify: inter-word;
+		}
+
+		table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+			text-align: center;
+        }
+
+	</style>
+	
+	<body>
+
+		<div class="page">
+ 
+			<h3>ACTA DE RECEPCI&Oacute;N DE SERVICIOS</h3>
+			
+			En la Ciudad de Formosa, siendo las 10:00 horas, del día {% now "d" %} de {% now "F" %} de 
+			{% now "Y" %} y con presencia del Director de Obras Públicas Sr. ING. NORBERTO DONATO JOFRÉ,
+			se recepcionan los servicios correspondientes al mes de {{mes}} de 2020 cuyas
+			características se detallan a continuación y que correspondan al Expediente {{contrato.expediente.upper}} - 
+			Decreto Nº {{ contrato.decreto }}
+
+			<br>
+			<br>
+
+			<table style="width:100%">
+				<thead>
+					<th>Apellido y Nombre</th>
+					<th>Prestacion</th>
+					<th>Importe</th>
+				</thead>
+
+				<tr>
+					<td>{{contrato.monotributista.apellido.upper}}, {{contrato.monotributista.nombre.upper}}</td>
+					<td>{{contrato.tipocontrato.tareascontrato}}  </td>
+					<td>{{contrato.monto_mensual}}  </td>
+				</tr>
+
+				<tr>
+					<td>Total</td>
+					<td>&nbsp;</td>
+					<td>{{contrato.monto_mensual}}</td>
+				</tr>
+			</table>
+
+			<br>
+
+  
+			Se deja constancia que los servicios que se detallan han sido realizados y controlados a conformidad del
+			responsable que suscribe la presente.
+
+
+
+			
+
+			
+
+		</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+

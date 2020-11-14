@@ -26,5 +26,5 @@ class ContratoMonotributistaForm(forms.ModelForm):
     class Meta:
         model = ContratoMonotributista
         fields = ['tipocontrato', 'monotributista', 'fecha_inicio',
-            'fecha_fin', 'monto_mensual']
+            'fecha_fin', 'monto_mensual', 'expediente', 'decreto']
 

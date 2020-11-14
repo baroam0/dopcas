@@ -6,7 +6,7 @@ class TipoContrato(models.Model):
     tareascontrato = models.CharField(max_length=1000, null=True, blank=True)
 
     def __str__(self):
-        return self.descripcion
+        return self.descripcion.upper()
     
     class Meta:
         verbose_name_plural = "Tipos de Contratos"

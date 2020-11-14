@@ -18,7 +18,7 @@ from django.urls import path
 
 from apps.contratomonotributistas.views import (detallecontrato,
     listadocontratomonotributista, nuevocontratomonotributista,
-    editarcontratomonotributista, f16b)
+    editarcontratomonotributista, f16b, generaf16b)
 
 from apps.monotributistas.views import (listadomonotributista,
     editarmonotributista, nuevomonotributista)
@@ -35,6 +35,7 @@ urlpatterns = [
     path('listadomonotributista/', listadomonotributista),
     path('nuevomonotributista/', nuevomonotributista),
     path('editarmonotributista/<int:pk>', editarmonotributista),
-    path('f16b/', f16b),
+    path('generaf16b/', generaf16b),
+    path('f16b/<int:cnt>/<int:mes>', f16b)
 ]
 

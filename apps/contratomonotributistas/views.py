@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 
 from .forms import ContratoMonotributistaForm
 from .models import ContratoMonotributista
+from apps.complementos.models import Mes
 from apps.tiposcontratos.models import TipoContrato
 from lib.numeroatexto import numtxt, numerotxt
 from lib.cuentames import totalmes
@@ -104,7 +105,29 @@ def editarcontratomonotributista(request, pk):
         form = ContratoMonotributistaForm(instance=consulta)
         return render(request, 'contratomonotributistas/editar_contratomonotributista.html', {"form": form})
 
-def f16b(request):
-    return render(request, 'tiposcontratos/f16b.html')
+
+def generaf16b(request):
+    meses = Mes.objects.all().order_by("pk")
+    contratos = ContratoMonotributista.objects.all().order_by("monotributista")
+    return render(
+        request,
+        'monotributistas/generaf16b.html',
+        {
+            "contratos": contratos,
+            "meses": meses
+        })
+
+
+def f16b(request,cnt,mes):
+    contrato = ContratoMonotributista.objects.get(pk=cnt)
+    mes = Mes.objects.get(pk=mes)
+    return render(
+        request,
+        'monotributistas/f16b.html',
+        {
+            "contrato": contrato,
+            "mes": mes
+        }
+    )
 
 # Create your views here.

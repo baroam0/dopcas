@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+
+{% block content%}
+	<form>
+
+		<br>
+		<select id="selectContrato" name="selectContrato">
+			{% for contrato in contratos %}
+				<option value={{contrato.pk}}>{{contrato.monotributista}} - {{contrato.fecha_inicio}} - {{contrato.fecha_fin}}  </option>
+			{% endfor %}
+		</select>
+
+		<select id="selectMes" name="selectMes">
+			{% for mes in meses %}
+				<option value={{mes.pk}}>{{mes.descripcion}}</option>
+			{% endfor %}
+		</select>
+
+		<button type="button" onclick="Generar();">Generar</button>
+
+
+		<br>
+	</form>
+	<script>
+		function Generar(){
+			var cnt = document.getElementById('selectContrato').value;
+			var mes = document.getElementById('selectMes').value;
+			window.open("/f16b/" + cnt + "/" + mes );
+		}
+	</script>
+{% endblock %}
+
+
+
+
+
+

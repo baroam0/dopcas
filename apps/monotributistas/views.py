@@ -7,8 +7,11 @@ from .models import Monotributista
 def listadomonotributista(request):
     if "txtbuscar" in request.GET:
         parametro = request.GET.get("txtbuscar")
-        resultados = Monotributista.objects.filter(apellido__contains=parametro)
-    else:
+        if parametro == "" or parametro == None:
+            resultados = Monotributista.objects.all().order_by("apellido")
+        else:    
+            resultados = Monotributista.objects.filter(apellido__contains=parametro).order_by("apellido")
+    else:   
         resultados = Monotributista.objects.all().order_by("apellido")
 
     return render(

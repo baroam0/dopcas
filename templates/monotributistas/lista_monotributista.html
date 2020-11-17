@@ -20,6 +20,7 @@
 			{% for resultado in resultados %}
 				<tr>
 					<td>{{resultado.apellido.upper}}, {{resultado.nombre.upper}}  </td>
+					<td>{{resultado.numerodocumento}} </td>
 					<td><a href="/editarmonotributista/{{resultado.pk}}">Editar</a> </td>  
 				</tr>
 			{% endfor %}

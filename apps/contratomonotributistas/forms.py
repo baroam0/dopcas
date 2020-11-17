@@ -12,7 +12,7 @@ class ContratoMonotributistaForm(forms.ModelForm):
         required=True,
     )
     monotributista = forms.ModelChoiceField(
-        queryset=Monotributista.objects.all(),
+        queryset=Monotributista.objects.all().order_by("apellido"),
         label = 'Monotributista',
         required=True,
     )

@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.complementos',
+    'apps.cooperativas',
+    'apps.contratocooperativas',
     'apps.contratomonotributistas',
     'apps.monotributistas',
+    'apps.obras',
     'apps.tiposcontratos',
 ]
 

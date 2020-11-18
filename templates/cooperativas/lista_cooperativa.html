@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+
+{% block content%}
+	<form action="/listadomonotributista" method="GET">
+
+		<br><br>
+		<input id="txtbuscar" name="txtbuscar">
+		<br>
+		<br>
+
+		<button type="submit">Buscar</button>
+
+		<button type="button" onclick="location.href='/nuevocontratista';">Nuevo</button>
+
+		<br>
+		<br>
+
+		<table style="width:100%">
+			{% for resultado in resultados %}
+				<tr>
+					<td>{{resultado.descripcion.upper}} </td>
+					<td>{{resultado.cuit}} </td>
+					<td><a href="/editarcontratista/{{resultado.pk}}">Editar</a> </td>  
+				</tr>
+			{% endfor %}
+
+		  </table>
+	</form>
+{% endblock %}

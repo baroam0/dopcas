@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 
 {% block content%}
-	<form action="/listadocontratista" method="GET">
+	<form action="/listadoadjudicacion" method="GET">
 
 		<br><br>
 		<input id="txtbuscar" name="txtbuscar">
@@ -11,7 +11,7 @@
 
 		<button type="submit">Buscar</button>
 
-		<button type="button" onclick="location.href='/nuevocontratista';">Nuevo</button>
+		<button type="button" onclick="location.href='/nuevaadjudicacion';">Nuevo</button>
 
 		<br>
 		<br>
@@ -19,9 +19,9 @@
 		<table style="width:100%">
 			{% for resultado in resultados %}
 				<tr>
-					<td>{{resultado.descripcion.upper}} </td>
+					<td>{{resultado.obra.descripcion.upper}} </td>
 					<!--td>{{resultado.cuit}} </td-->
-					<td><a href="/editarcontratista/{{resultado.pk}}">Editar</a> </td>  
+					<td><a href="/editaradjudicacion/{{resultado.pk}}">Editar</a> </td>  
 				</tr>
 			{% endfor %}
 

@@ -12,7 +12,7 @@ class TipoContrato(models.Model):
         return self.descripcion
 
     class Meta:
-    verbose_name_plural = "Tipos de Contratos"
+        verbose_name_plural = "Tipos de Contratos"
 
 
 class ContratoObra(models.Model):

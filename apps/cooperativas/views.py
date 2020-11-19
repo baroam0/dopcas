@@ -1,5 +1,5 @@
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .forms import ContratistaForm
 from .models import Contratista
@@ -38,7 +38,7 @@ def editarcontratista(request, pk):
         form = ContratistaForm(request.POST, instance=consulta)
         if form.is_valid():
             form.save()
-            return redirect('/listadocontratomonotributista')
+            return redirect('/listadocontratista')
         else:
             return render(
                 request,
@@ -48,9 +48,6 @@ def editarcontratista(request, pk):
     else:
         form = ContratistaForm(instance=consulta)
         return render(request, 'cooperativas/editar_cooperativa.html', {"form": form})
-
-
-
 
 
 # Create your views here.

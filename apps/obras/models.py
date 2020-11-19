@@ -4,7 +4,7 @@ from apps.cooperativas.models import Contratista
 
 
 class TipoLicitacion(models.Model):
-    descripcion = models.CharFlield(max_length=500, null=False, blank=False)
+    descripcion = models.CharField(max_length=500, null=False, blank=False)
     
     def __str__(self):
         return self.descripcion
@@ -14,9 +14,9 @@ class TipoLicitacion(models.Model):
 
 
 class Obra(models.Model):
-    descripcion = models.CharFlield(max_length=500, null=False, blank=False)
-    expediente = models.CharFlield(max_length=15, null=False, blank=False)
-    decreto = models.CharFlield(max_length=15, null=False, blank=False)
+    descripcion = models.CharField(max_length=500, null=False, blank=False)
+    expediente = models.CharField(max_length=15, null=False, blank=False)
+    decreto = models.CharField(max_length=15, null=False, blank=False)
     tipo_licitacion = models.ForeignKey(TipoLicitacion, on_delete=models.CASCADE)
     numero_licitacion = models.CharField(max_length=10, null=True, blank=True)
     monto = models.DecimalField(decimal_places=2, max_digits=10)

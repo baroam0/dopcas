@@ -1,14 +1,110 @@
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-from .models import ContratoObra, TipoContrato
-
+from .forms import ContratoObraForm
+from .models import ContratoObra
+from apps.complementos.models import Mes
+from apps.tiposcontratos.models import TipoContrato
+from lib.numeroatexto import numtxt, numerotxt
+from lib.cuentames import totalmes
 
 
 def detallecontratocontratista(request, pk):
-    consulta = ContratoObra.objects.get(pk=pk)
+    resultado = ContratoMonotributista.objects.get(pk=pk)
+    tipocontrato = TipoContrato.objects.get(pk=int(resultado.tipocontrato.pk))
+    plazo = totalmes(resultado.fecha_inicio, resultado.fecha_fin)
+    montocontrato = plazo * resultado.monto_mensual
+    letramontomensual = numtxt(resultado.monto_mensual)
+    letramontocontrato = numtxt(montocontrato)
+    letraplazo = numerotxt(int(plazo))
     
-    return render(request, "contratosobras/contrato_cooperativa.html", {})
-   
+    if tipocontrato.descripcion == "Contrato Administrativo":
+        return render(
+            request,
+            "tiposcontratos/contrato_administrativo.html",
+            {
+                "resultado": resultado,
+                "plazo": plazo,
+                "montocontrato": montocontrato,
+                "letramontocontrato": letramontocontrato,
+                "letramontomensual" : letramontomensual,
+                "letraplazo": letraplazo
+            }
+        )
+
+    if tipocontrato.descripcion == "Contrato Maquinista":
+        return render(
+            request,
+            "tiposcontratos/contrato_maquinista.html",
+            {
+                "resultado": resultado,
+                "plazo": plazo,
+                "montocontrato": montocontrato,
+                "letramontocontrato": letramontocontrato,
+                "letramontomensual" : letramontomensual,
+                "letraplazo": letraplazo
+            }
+        )
+    
+    if tipocontrato.descripcion == "Contrato Tecnico":
+        return render(
+            request,
+            "tiposcontratos/contrato_tecnico.html",
+            {
+                "resultado": resultado,
+                "plazo": plazo,
+                "montocontrato": montocontrato,
+                "letramontocontrato": letramontocontrato,
+                "letramontomensual" : letramontomensual,
+                "letraplazo": letraplazo
+            }
+        )
+
+    
+def listadocontratoobra(request):
+    if "txtbuscar" in request.GET:
+        parametro = request.GET.get("txtbuscar")
+        resultados = ContratoObra.objects.filter(obra__descripcion__contains=parametro)
+    else:
+        resultados = ContratoObra.objects.all()
+    return render(
+        request,
+        "contratosobras/lista_contratoobra.html",
+        {
+            "resultados": resultados
+        })
+
+
+def nuevocontratoobra(request):
+    if request.POST:
+        form = ContratoObraForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/listadocontratomonotributista')
+        else:
+            return render(request, 'contratosobras/editar_contratoobra.html', {"form": form})
+    else:
+        form = ContratoObraForm()
+        return render(request, 'contratosobras/editar_contratoobra.html', {"form": form})
+
+
+def editarcontratoobra(request, pk):
+    consulta = ContratoMonotributista.objects.get(pk=pk)
+    if request.POST:
+        form = ContratoObraForm(request.POST, instance=consulta)
+        if form.is_valid():
+            form.save()
+            return redirect('/listadocontratomonotributista')
+        else:
+            return render(
+                request,
+                'contratomonotributistas/editar_contratomonotributista.html',
+                {"form": form}
+            )
+    else:
+        form = ContratoObraForm(instance=consulta)
+        return render(request, 'contratomonotributistas/editar_contratomonotributista.html', {"form": form})
+
 
 # Create your views here.
+

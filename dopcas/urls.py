@@ -16,14 +16,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from apps.cooperativas.views import listadocontratista, nuevocontratista, editarcontratista
+from apps.cooperativas.views import (listadocontratista,
+    nuevocontratista, editarcontratista)
+
+from apps.contratocooperativas.views import listadocontratoobra, nuevocontratoobra
 
 from apps.contratomonotributistas.views import (detallecontrato,
     listadocontratomonotributista, nuevocontratomonotributista,
     editarcontratomonotributista, f16b, generaf16b)
 
+
 from apps.monotributistas.views import (listadomonotributista,
     editarmonotributista, nuevomonotributista)
+
+from apps.obras.views import (listadoobra, nuevaobra, editarobra,
+    listadoadjudicacion, nuevaadjudicacion, editaradjudicacion)
+
 from dopcas.views import inicio
 
 
@@ -33,6 +41,18 @@ urlpatterns = [
     path('listadocontratista/', listadocontratista),
     path('nuevocontratista/', nuevocontratista),
     path('editarcontratista/<int:pk>', editarcontratista),
+    
+    path('listadocontratoobra/', listadocontratoobra),
+    path('nuevocontratoobra/', nuevocontratoobra),
+    
+    path('listadoobra/', listadoobra),
+    path('nuevaobra/', nuevaobra),
+    path('editarobra/<int:pk>', editarobra),
+    
+    path('listadoadjudicacion/', listadoadjudicacion),
+    path('nuevaadjudicacion/', nuevaadjudicacion),
+    path('editaradjudicacion/<int:pk>', editaradjudicacion),
+    
     path('detallecontrato/<int:pk>/', detallecontrato),
     path('listadocontratomonotributista/', listadocontratomonotributista),
     path('nuevocontratomonotributista/', nuevocontratomonotributista),

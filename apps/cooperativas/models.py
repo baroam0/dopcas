@@ -3,12 +3,12 @@ from django.db import models
 
 class Contratista(models.Model):
     descripcion = models.CharField(max_length=100, unique=True)
-    cuit = models.CharField(max_length=11, unique=True)
+    cuit = models.CharField(max_length=11, null=False, blank=False, unique=True)
     domicilio = models.CharField(max_length=150, unique=False)
-    titular = models.CharField(max_length=100, unique=False)
-    doctitular = models.CharField(max_length=100, unique=False)
-    representantetecnico = models.CharField(max_length=100, unique=False)
-    docrepresentantetecnico = models.CharField(max_length=100, unique=False)
+    titular = models.CharField(max_length=100, null=False, blank=False, default="0")
+    doctitular = models.CharField(max_length=100, null=False, blank=False, default="0")
+    representantetecnico = models.CharField(max_length=100, null=True, blank=True)
+    docrepresentantetecnico = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return self.descripcion

@@ -1,5 +1,6 @@
 from django.db import models
 
+from apps.complementos.models import UnidadTiempo
 from apps.cooperativas.models import Contratista
 
 
@@ -19,6 +20,8 @@ class Obra(models.Model):
     decreto = models.CharField(max_length=15, null=False, blank=False)
     tipo_licitacion = models.ForeignKey(TipoLicitacion, on_delete=models.CASCADE)
     numero_licitacion = models.CharField(max_length=10, null=True, blank=True)
+    plazo = models.IntegerField(null=True, blank=True)
+    unidadtiempo = models.ForeignKey(UnidadTiempo, on_delete=models.CASCADE, null=True, blank=True)
     monto = models.DecimalField(decimal_places=2, max_digits=10)
 
     def __str__(self):

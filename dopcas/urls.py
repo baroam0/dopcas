@@ -19,7 +19,7 @@ from django.urls import path
 from apps.cooperativas.views import (listadocontratista,
     nuevocontratista, editarcontratista)
 
-from apps.contratocooperativas.views import listadocontratoobra, nuevocontratoobra
+from apps.contratocooperativas.views import listadocontratocooperativa, nuevocontratocooperativa
 
 from apps.contratomonotributistas.views import (detallecontrato,
     listadocontratomonotributista, nuevocontratomonotributista,
@@ -42,8 +42,8 @@ urlpatterns = [
     path('nuevocontratista/', nuevocontratista),
     path('editarcontratista/<int:pk>', editarcontratista),
     
-    path('listadocontratoobra/', listadocontratoobra),
-    path('nuevocontratoobra/', nuevocontratoobra),
+    path('listadocontratocooperativa/', listadocontratocooperativa),
+    path('nuevocontratoobra/', nuevocontratocooperativa),
     
     path('listadoobra/', listadoobra),
     path('nuevaobra/', nuevaobra),

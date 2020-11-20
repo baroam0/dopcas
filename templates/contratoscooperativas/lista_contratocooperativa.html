@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+
+{% block content%}
+	<form action="/listadocontratoobra" method="GET">
+
+		<br><br>
+		<input id="txtbuscar" name="txtbuscar">
+		<br>
+		<br>
+
+		<button type="submit">Buscar</button>
+
+		<button type="button" onclick="location.href='/nuevocontratoobra';">Nuevo</button>
+
+		<br>
+		<br>
+
+		<table style="width:100%">
+			<thead>
+				<th>Obra</th>
+				<th>Cooperativa</th>
+				<th>Fecha Inicio</th>
+				<th>Monto Mensual</th>
+				<th>Editar</th>
+				<th>Ver</th>
+			</thead>
+		
+		
+			{% for resultado in resultados %}
+				<<tr>
+					<td>{{resultado.monotributista.apellido.upper}}, {{resultado.monotributista.nombre.upper}}  </td>
+					<td>{{resultado.fecha_inicio}}  </td>
+					<td>{{resultado.fecha_fin}}  </td>
+					<td>{{resultado.monto_mensual}}  </td>
+					<td><a href="/editarcontratomonotributista/{{resultado.pk}}">Editar</a> </td>
+					<td><a href="/detallecontrato/{{resultado.pk}}">Ver</a> </td>
+				</tr>
+			{% endfor %}
+
+		  </table>
+	</form>
+{% endblock %}

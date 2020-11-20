@@ -1,8 +1,8 @@
 
 from django.shortcuts import render, redirect
 
-from .forms import ContratoObraForm
-from .models import ContratoObra
+from .forms import ContratoCooperativaForm
+from .models import ContratoCooperativa
 from apps.complementos.models import Mes
 from apps.tiposcontratos.models import TipoContrato
 from lib.numeroatexto import numtxt, numerotxt
@@ -61,34 +61,34 @@ def detallecontratocontratista(request, pk):
         )
 
     
-def listadocontratoobra(request):
+def listadocontratocooperativa(request):
     if "txtbuscar" in request.GET:
         parametro = request.GET.get("txtbuscar")
-        resultados = ContratoObra.objects.filter(obra__descripcion__contains=parametro)
+        resultados = ContratoCooperativa.objects.filter(obra__descripcion__contains=parametro)
     else:
-        resultados = ContratoObra.objects.all()
+        resultados = ContratoCooperativa.objects.all()
     return render(
         request,
-        "contratosobras/lista_contratoobra.html",
+        "contratoscooperativas/lista_contratocooperativa.html",
         {
             "resultados": resultados
         })
 
 
-def nuevocontratoobra(request):
+def nuevocontratocooperativa(request):
     if request.POST:
-        form = ContratoObraForm(request.POST)
+        form = ContratoCooperativaForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('/listadocontratomonotributista')
         else:
             return render(request, 'contratosobras/editar_contratoobra.html', {"form": form})
     else:
-        form = ContratoObraForm()
+        form = ContratoCooperativaForm()
         return render(request, 'contratosobras/editar_contratoobra.html', {"form": form})
 
 
-def editarcontratoobra(request, pk):
+def editarcontratocooperativa(request, pk):
     consulta = ContratoMonotributista.objects.get(pk=pk)
     if request.POST:
         form = ContratoObraForm(request.POST, instance=consulta)

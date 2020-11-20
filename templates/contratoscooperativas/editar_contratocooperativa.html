@@ -1,0 +1,27 @@
+
+
+{% extends "base.html" %}
+
+{% block content%}
+
+	<h3 align="center">DETALLE MONOTRIBUTISTA</h3>
+	<form  method="POST">{% csrf_token %}
+		{{ form.as_p}}
+		<hr>
+
+		<button id="btn-guardar" type="submit">
+			Aceptar
+		</button>
+
+		<button type="button" id="btn-cancelar" onclick="IrListadoMonotributista()">
+			Cancelar
+		</button>
+	</form>
+
+	<script>
+		function IrListadoMonotributista() {
+            window.location.replace("/listadomonotributista");
+        }
+
+	</script>
+{% endblock %}

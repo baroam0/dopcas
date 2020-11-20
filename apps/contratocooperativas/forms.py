@@ -1,29 +1,28 @@
 
 from django import forms
 
-from .models import ContratoObra, TipoContrato
+from .models import ContratoCooperativa
 from apps.obras.models import Obra
 from apps.cooperativas.models import Contratista 
 
 
-class ContratoObraForm(forms.ModelForm):
-    obra = forms.ModelChoiceField(queryset=Obra.objects.all(), label="Obra")
+class ContratoCooperativaForm(forms.ModelForm):
+    descripcion = forms.CharField(label="Descripcion", required=True)
     contratista = forms.ModelChoiceField(
         queryset=Contratista.objects.all().order_by("descripcion"),
-        label="Contratista")
-
-    tipocontrato = forms.ModelChoiceField(
-        queryset=TipoContrato.objects.all().order_by("descripcion"),
-        label="Tipo Contrato", required=True)
-
-    poliza = forms.CharField(label="Nombre Aseguradora", required=False)
-    numeropoliza = forms.CharField(label="Numero de Poliza", required=False)
-    tareas = forms.CharField(label="Tareas a Realizar", required=False)
+        label="",
+        )
+    poliza = forms.CharField(label="Poliza")
+    numeropoliza = forms.CharField(label="Numero Poliza")
+    tareas = forms.CharField(label="Tareas")
+    plazo = forms.IntegerField(label="Plazo")
+    montomensual = forms.DecimalField(label="Monto Mensual")
 
     def __init__(self, *args, **kwargs):
-        super(ContratoObraForm, self).__init__(*args, **kwargs)
+        super(ContratoCooperativaForm, self).__init__(*args, **kwargs)
 
     class Meta:
-        model = ContratoObra
-        fields = ['obra', 'contratista', 'tipocontrato', 'poliza', 'numeropoliza', 'tareas']
-
+        model = ContratoCooperativa
+        fields = ['descripcion' , 'contratista', 'poliza',
+            'numeropoliza', 'tareas', 'plazo', 'montomensual'
+        ]

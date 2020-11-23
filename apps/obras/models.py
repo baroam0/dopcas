@@ -30,17 +30,4 @@ class Obra(models.Model):
     class Meta:
         verbose_name_plural = "Obras"
 
-
-class Adjudicacion(models.Model):
-    obra = models.ForeignKey(Obra, on_delete=models.CASCADE)
-    adjudicatario = models.ForeignKey(Contratista, on_delete=models.CASCADE)
-    montoadjudicacion = models.DecimalField(decimal_places=2, max_digits=10)
-    
-    def __str__(self):
-        return str(self.obra.descripcion) + " - " + str(self.adjudicatario)
-
-    class Meta:
-        verbose_name_plural = "Adjudicaciones"
-
-
 # Create your models here.

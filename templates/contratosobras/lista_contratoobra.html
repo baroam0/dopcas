@@ -18,24 +18,22 @@
 
 		<table style="width:100%">
 			<thead>
+				<th>Expediente</th>
 				<th>Obra</th>
 				<th>Contratista</th>
-				<th>Fecha Inicio</th>
-				<th>Fecha Fin</th>
-				<th>Monto Mensual</th>
+				<th>Monto</th>
 				<th>Editar</th>
 				<th>Ver</th>
 			</thead>
-		
-		
+
 			{% for resultado in resultados %}
-				<<tr>
-					<td>{{resultado.monotributista.apellido.upper}}, {{resultado.monotributista.nombre.upper}}  </td>
-					<td>{{resultado.fecha_inicio}}  </td>
-					<td>{{resultado.fecha_fin}}  </td>
-					<td>{{resultado.monto_mensual}}  </td>
-					<td><a href="/editarcontratomonotributista/{{resultado.pk}}">Editar</a> </td>
-					<td><a href="/detallecontrato/{{resultado.pk}}">Ver</a> </td>
+				<tr>
+					<td>{{resultado.obra.expediente.upper}} </td>
+					<td>{{resultado.obra.descripcion.upper}} </td>
+					<td>{{resultado.contratista.descripcion.upper}}  </td>
+					<td>{{resultado.monto}}  </td>
+					<td><a href="/editarcontratoobra/{{resultado.pk}}">Editar</a> </td>
+					<td><a href="/detallecontratoobra/{{resultado.pk}}">Ver</a> </td>
 				</tr>
 			{% endfor %}
 

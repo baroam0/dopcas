@@ -1,7 +1,7 @@
 
 from django import forms
 
-from .models import Obra, TipoLicitacion, Adjudicacion
+from .models import Obra, TipoLicitacion
 from apps.cooperativas.models import Contratista
 
 
@@ -21,26 +21,3 @@ class ObraForm(forms.ModelForm):
         fields = [
             'descripcion', 'expediente', 'decreto', 'tipo_licitacion',
             'numero_licitacion', 'monto']
-
-
-class AdjudicacionForm(forms.ModelForm):
-    obra = forms.ModelChoiceField(
-        queryset=Obra.objects.all().order_by("descripcion"),
-        label="Obra", required=True)
-
-    adjudicatario = forms.ModelChoiceField(
-        queryset=Contratista.objects.all().order_by("descripcion"),
-        label="Adjudicatario", required=True)
-
-    montoadjudicacion = forms.DecimalField(
-        label="Monto Adjudicado", required=True)
-    
-    def __init__(self, *args, **kwargs):
-        super(AdjudicacionForm, self).__init__(*args, **kwargs)
-
-    class Meta:
-        model = Adjudicacion
-        fields = [
-            'obra', 'adjudicatario', 'montoadjudicacion']
-
-   

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.cooperativas',
     'apps.contratocooperativas',
     'apps.contratomonotributistas',
+    'apps.contratosobras',
     'apps.monotributistas',
     'apps.obras',
     'apps.tiposcontratos',

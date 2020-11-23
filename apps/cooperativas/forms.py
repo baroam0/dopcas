@@ -12,11 +12,13 @@ class ContratistaForm(forms.ModelForm):
     doctitular = forms.CharField(label="Nro Doc Titular", required=False)
     representantetecnico = forms.CharField(label="Representante Tecnico", required=False)
     docrepresentantetecnico = forms.CharField(label="Nro Doc Rep Tecnico", required=False)
+    cooperativa = forms.BooleanField(label="Es Cooperativa")
 
     def __init__(self, *args, **kwargs):
         super(ContratistaForm, self).__init__(*args, **kwargs)
 
     class Meta:
         model = Contratista
-        fields = ['descripcion', 'cuit', 'domicilio', 'titular', 'doctitular', 'representantetecnico', 'docrepresentantetecnico']
+        fields = ['descripcion', 'cuit', 'domicilio', 'titular', 'doctitular',
+            'representantetecnico', 'docrepresentantetecnico', 'cooperativa']
 

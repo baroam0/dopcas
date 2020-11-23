@@ -19,18 +19,20 @@ from django.urls import path
 from apps.cooperativas.views import (listadocontratista,
     nuevocontratista, editarcontratista)
 
-from apps.contratocooperativas.views import listadocontratocooperativa, nuevocontratocooperativa
+from apps.contratocooperativas.views import (listadocontratocooperativa,
+    nuevocontratocooperativa, editarcontratocooperativa)
+
+from apps.contratosobras.views import (listadocontratoobra, nuevocontratoobra,
+    editarcontratoobra, detallecontratoobra)
 
 from apps.contratomonotributistas.views import (detallecontrato,
     listadocontratomonotributista, nuevocontratomonotributista,
     editarcontratomonotributista, f16b, generaf16b)
 
-
 from apps.monotributistas.views import (listadomonotributista,
     editarmonotributista, nuevomonotributista)
 
-from apps.obras.views import (listadoobra, nuevaobra, editarobra,
-    listadoadjudicacion, nuevaadjudicacion, editaradjudicacion)
+from apps.obras.views import (listadoobra, nuevaobra, editarobra)
 
 from dopcas.views import inicio
 
@@ -43,15 +45,17 @@ urlpatterns = [
     path('editarcontratista/<int:pk>', editarcontratista),
     
     path('listadocontratocooperativa/', listadocontratocooperativa),
-    path('nuevocontratoobra/', nuevocontratocooperativa),
+    path('nuevocontratocooperativa/', nuevocontratocooperativa),
+    path('editarcontratocooperativa/', editarcontratocooperativa),
+
+    path('listadocontratoobra/', listadocontratoobra),
+    path('nuevocontratoobra/', nuevocontratoobra),
+    path('editarcontratoobra/<int:pk>', editarcontratoobra),
+    path('detallecontratoobra/<int:pk>/', detallecontratoobra),
     
     path('listadoobra/', listadoobra),
     path('nuevaobra/', nuevaobra),
     path('editarobra/<int:pk>', editarobra),
-    
-    path('listadoadjudicacion/', listadoadjudicacion),
-    path('nuevaadjudicacion/', nuevaadjudicacion),
-    path('editaradjudicacion/<int:pk>', editaradjudicacion),
     
     path('detallecontrato/<int:pk>/', detallecontrato),
     path('listadocontratomonotributista/', listadocontratomonotributista),

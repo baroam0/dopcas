@@ -60,7 +60,7 @@ def detallecontratocontratista(request, pk):
             }
         )
 
-    
+
 def listadocontratocooperativa(request):
     if "txtbuscar" in request.GET:
         parametro = request.GET.get("txtbuscar")
@@ -103,7 +103,10 @@ def editarcontratocooperativa(request, pk):
             )
     else:
         form = ContratoObraForm(instance=consulta)
-        return render(request, 'contratomonotributistas/editar_contratomonotributista.html', {"form": form})
+        return render(request,
+            'contratomonotributistas/editar_contratomonotributista.html',
+            {"form": form}
+        )
 
 
 # Create your views here.

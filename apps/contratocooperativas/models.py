@@ -13,6 +13,7 @@ class ContratoCooperativa(models.Model):
     numeropoliza = models.CharField(max_length=250, null=True, blank=True)
     tareas = models.CharField(max_length=250, null=True, blank=True)
     plazo = models.IntegerField(null=True, blank=True)
+    unidadtiempo = models.ForeignKey(UnidadTiempo, on_delete=models.CASCADE, default=1)
     montomensual = models.DecimalField(max_digits=10, decimal_places=2, default=1)
 
     def __str__(self):

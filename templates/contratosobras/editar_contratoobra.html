@@ -4,7 +4,7 @@
 
 {% block content%}
 
-	<h3 align="center">DETALLE MONOTRIBUTISTA</h3>
+	<h3 align="center">DETALLE CONTRATO DE OBRA </h3>
 	<form  method="POST">{% csrf_token %}
 		{{ form.as_p}}
 		<hr>
@@ -13,14 +13,14 @@
 			Aceptar
 		</button>
 
-		<button type="button" id="btn-cancelar" onclick="IrListadoMonotributista()">
+		<button type="button" id="btn-cancelar" onclick="IrListadoContratoObra()">
 			Cancelar
 		</button>
 	</form>
 
 	<script>
-		function IrListadoMonotributista() {
-            window.location.replace("/listadomonotributista");
+		function IrListadoContratoObra() {
+            window.location.replace("/listadocontratoobra");
         }
 
 	</script>

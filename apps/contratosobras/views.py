@@ -4,19 +4,34 @@ from django.shortcuts import render, redirect
 
 from .forms import ContratoObraForm
 from .models import ContratoObra
+from lib.numeroatexto import numtxt, numerotxt
 
 
 def detallecontratoobra(request, pk):
     resultado = ContratoObra.objects.get(pk=pk)
+    montoiva = resultado.monto * 21 / 121
+    letramontoiva = numtxt(montoiva)
+    letramonto = numtxt(resultado.monto)
+    montoneto = resultado.monto - montoiva
+    letramontoneto = numtxt(montoneto)
+    letraplazo = numerotxt(resultado.plazo)
+    letramontopoliza = numtxt(resultado.montopoliza)
+    
 
     return render(request,
         'contratosobras/contrato_licitacion.html',
         {
-            "resultado": resultado
+            "resultado": resultado,
+            "letramontoiva": letramontoiva,
+            "montoiva": montoiva,
+            "letramonto": letramonto,
+            "montoneto": montoneto,
+            "letramontoneto": letramontoneto,
+            "letraplazo": letraplazo,
+            "letramontopoliza": letramontopoliza
+
         }
     )
-
-
 
 
 def listadocontratoobra(request):

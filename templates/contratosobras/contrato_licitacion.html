@@ -43,7 +43,7 @@
 		</p>
 
 		<p>
-			CLAUSULA SEGUNDA – Piezas instrumentales del Contrato: Forman parte integrante de este
+			<b>CLAUSULA SEGUNDA</b> – Piezas instrumentales del Contrato: Forman parte integrante de este
 			Contrato la siguiente documentación:
 			el Pliego General de Bases y Condiciones: fs. {{resultado.inicio_pliegogeneral}} al {{resultado.fin_pliegogeneral}};
 			el Pliego Particular de Condiciones: fs. {{resultado.inicio_pliegoparticular}} 
@@ -55,70 +55,134 @@
 			Análisis de Precios Unitarios: fs. {{resultado.analisiprecio}} ;
 			Plan de Trabajos: fs. {{resultado.plantrabajo}};
 			Curva de Inversiones: fs. {{resultado.curvainversion}};
-			El Decreto de Adjudicación Nº {{resultado.obra.decreto }} a fs. 489;
+			El Decreto de Adjudicación Nº {{resultado.obra.decreto }} a fs. {{ resultado.foja_decreto }};
 			El Pliego de Especificaciones Técnicas Generales edición 1998 de la Dirección Nacional de Vialidad, 
 			la Ley Nº 959 de Obras Publicas de la Provincia de Formosa y las Leyes y Decretos Nacionales y 
 			Provinciales así como sus Reglamentaciones y Ordenanzas Municipales correspondientes.
 		</p>
 
 		<p>
-			CLAUSULA TERCERA – Firma del Pliego de Licitación: el Sr. Director de Obras Públicas ING. NORBERTO DONATO JOFRE en representación del Municipio y el SEÑOR PEDRO DOVAL VAZQUEZ en su carácter de Titular Y El ING. CESAR ALBERTO ZARZA en carácter de Representante Técnico, firman EL Pliego de Licitación y la Oferta, que forman parte del presente Contrato.
+			<b>CLAUSULA TERCERA </b> – Firma del Pliego de Licitación: el Sr. Director de Obras Públicas 
+			<b>ING. NORBERTO DONATO JOFRE </b> en representación del Municipio y el 
+			<b>{{ resultado.contratista.titular.upper }} </b> en su carácter de Titular y
+			<b>{{ resultado.contratista.representantetecnico.upper }} </b> en carácter de 
+			Representante Técnico, firman EL Pliego de Licitación y la Oferta, que forman parte del 
+			presente Contrato.
 		</p>
 
 		<p>
-			CLAUSULA CUARTA – Sistema de Contratación - Monto: La obra se contrata por el sistema de Unidad de Medida y Precios Unitarios. El trabajo se realizara por el monto siguiente: El IMPORTE NETO del monto cotizado: PESOS: VEINTICINCO MILLONES SEISCIENTOS VEINTE MIL CUATROCIENTOS CATORCE CON 40/100 ($ 25.620.414,40); IMPUESTO AL VALOR AGREGADO (I.V.A – 21%)  PESOS: CINCO MILLONES TRESCIENTOS OCHENTA MIL DOSCIENTOS OCHENTA Y SIETE  CON 40/100 ($ 5.380.287,03); MONTO TOTAL de la Obra: PESOS: TREINTA Y UN MILLONES SETECIENTOS UNO 43/100 ($ 31.000.701,43); En definitiva del volumen de obra ejecutada y medida, condicionado por reajustes de cómputos y / o modificaciones de Obra debidamente autorizados.
+			<b>CLAUSULA CUARTA</b> – Sistema de Contratación - Monto: La obra se contrata por el 
+			sistema de Unidad de Medida y Precios Unitarios. El trabajo se realizara por el monto
+			siguiente:
+			<b> El IMPORTE NETO del monto cotizado: PESOS: {{letramontoneto}} ({{ montoneto }}); 
+			IMPUESTO AL VALOR AGREGADO (I.V.A – 21%)  PESOS: {{letramontoiva}} ({{montoiva}}); 
+			MONTO TOTAL de la Obra:  PESOS: {{letramonto}}  ({{ resultado.monto }}) </b> . 
+			En definitiva del volumen de obra ejecutada y medida, condicionado por reajustes de 
+			cómputos y / o modificaciones de Obra debidamente autorizados.
 		</p>
 
 		<p>
-			CLAUSULA QUINTA – Plazo de Ejecución de Obra: EL CONTRATISTA deberá concluir los trabajos contratados en el plazo de CUATRO (04) meses corridos, a computar desde la fecha que se firme el Acta de Iniciación de Obra.
+			<b>CLAUSULA QUINTA</b> – Plazo de Ejecución de Obra: EL CONTRATISTA deberá concluir los 
+			trabajos contratados en el plazo de {{letraplazo.upper}} ({{resultado.plazo}}) 
+			{{resultado.unidadtiempo}} corridos, a computar desde la fecha que se 
+			firme el Acta de Iniciación de Obra.
 		</p>
 
 		<p>
-			CLAUSULA SEXTA – Medición, Certificación de los trabajos y Forma de pago: Los trabajos ejecutados se medirán entre el 1º y el quinto día de cada mes, se liquidarán y pagarán mediante certificados mensuales, con carácter de parciales y provisionales en la forma establecida en el Pliego PARTICULAR DE CONDICIONES.
+			<b>CLAUSULA SEXTA </b>– Medición, Certificación de los trabajos y Forma de pago: Los 
+			trabajos ejecutados se medirán entre el 1º y el quinto día de cada mes, se liquidarán 
+			y pagarán mediante certificados mensuales, con carácter de parciales y provisionales en 
+			la forma establecida en el Pliego PARTICULAR DE CONDICIONES.
 		</p>
 
 		<p>
-			CLAUSULA SETPTIMA  – Superintendencia de los Trabajos: LA MUNICIPALIDAD ejercerá la supervisión de los trabajos por intermedio del Servicio de Inspección que a ese efecto designe, cuya integración la realizará a su exclusivo juicio hasta la total terminación de los trabajos contratados. EL CONTRATISTA, se obliga a facilitar en forma amplia la vigilancia y contralor de las obras. EL CONTRATISTA y su personal cumplirán las instrucciones impartidas por el Servicio de Inspección.
+			<b>CLAUSULA SETPTIMA  </b>– Superintendencia de los Trabajos: LA MUNICIPALIDAD ejercerá 
+			la supervisión de los trabajos por intermedio del Servicio de Inspección que a ese efecto 
+			designe, cuya integración la realizará a su exclusivo juicio hasta la total terminación de 
+			los trabajos contratados. EL CONTRATISTA, se obliga a facilitar en forma amplia la vigilancia 
+			y contralor de las obras. EL CONTRATISTA y su personal cumplirán las instrucciones impartidas 
+			por el Servicio de Inspección.
 		</p>
 
 		<p>
-			CLAUSULA OCTAVA – Fondo de Reparo: De conformidad con lo dispuesto en la Ley Provincial, del importe de los Certificados que se emitan por todo concepto, a excepción de los Certificados de acopio de materiales, LA DIRECCIÓN retendrá, hasta la Recepción definitiva de la obra, el cinco por ciento (5%) para constituir la garantía correspondiente al Fondo de Reparo. Dicha garantía no devengara interés ni actualización alguna. EL CONTRATISTA podrá reemplazar el Fondo de Reparo por alguno de los medios previstos en la documentación licitatoria.
+			<b>CLAUSULA OCTAVA </b>– Fondo de Reparo: De conformidad con lo dispuesto en la Ley Provincial,
+			del importe de los Certificados que se emitan por todo concepto, a excepción de los 
+			Certificados de acopio de materiales, LA DIRECCIÓN retendrá, hasta la Recepción definitiva 
+			de la obra, el cinco por ciento (5%) para constituir la garantía correspondiente al Fondo de 
+			Reparo. Dicha garantía no devengara interés ni actualización alguna. EL CONTRATISTA podrá
+			reemplazar el Fondo de Reparo por alguno de los medios previstos en la documentación 
+			licitatoria.
 		</p>
 
 		<p>
-			CLAUSULA DÉCIMA – Garantía de Contrato: EL CONTRATISTA constituye en este acto Garantía de Contrato por un monto de PESOS: UN MILLON QUINIENTOS CINCUENTA MIL TREINTA Y SEIS  CON 00/100 CENTAVOS ($ 1.550.036,00) mediante Póliza de Seguro de Caución Nº 705.329, de Finanzas y Credito S.A Compañía de Seguros, en cumplimiento del requisito exigido en el Pliego Particular de Condiciones.
+			<b>CLAUSULA NOVENA </b>– Garantía de Contrato: EL CONTRATISTA constituye en este acto Garantía de 
+			Contrato por un monto de <b> PESOS: {{letramontopoliza}} ({{resultado.montopoliza}})  mediante Póliza 
+			de Seguro de Caución Nº {{resultado.numeropoliza}}, de {{resultado.poliza.upper}} ,</b> 
+			en cumplimiento del requisito exigido en el Pliego Particular de Condiciones.
 		</p>
 
 		<p>
-			CLAUSULA DÉCIMO PRIMERA – Responsabilidades: LA MUNICIPALIDAD no se responsabiliza por los daños y perjuicios de cualquier índole y que, por cualquier causa, sufra o cause EL CONTRATISTA, y / o sus cosas, y / o su personal, a terceros y que puedan originarse por la ejecución de este Contrato. EL CONTRATISTA queda obligado y es a su exclusiva responsabilidad el cumplimiento de todas las leyes sociales, laborales y previsionales de todo personal que ocupe en la obra. Se obliga asimismo a contratar los seguros necesarios de coberturas de accidentes, daños y perjuicios que pudieran ocurrir a su personal, a la Inspección de Obra y a terceros.
+			<b>CLAUSULA DÉCIMA</b> – Responsabilidades: LA MUNICIPALIDAD no se responsabiliza por los daños
+			y perjuicios de cualquier índole y que, por cualquier causa, sufra o cause EL CONTRATISTA, y / o sus 
+			cosas, y / o su personal, a terceros y que puedan originarse por la ejecución de este Contrato. 
+			EL CONTRATISTA queda obligado y es a su exclusiva responsabilidad el cumplimiento de todas las leyes 
+			sociales, laborales y previsionales de todo personal que ocupe en la obra. Se obliga asimismo a 
+			contratar los seguros necesarios de coberturas de accidentes, daños y perjuicios que pudieran ocurrir
+			a su personal, a la Inspección de Obra y a terceros.
 		</p>
 
 		<p>
-			CLAUSULA DÉCIMO SEGUNDA – Conservación y Recepción de la Obra: Terminados todos los trabajos del Contrato, EL CONTRATISTA solicitara la Recepción Provisional de la obra. De no existir observaciones, se labrará el Acta respectiva en forma conjunta con la Inspección. La Medición Final se realizara de acuerdo con lo establecido en el Pliego Particular de Condiciones. A partir de la fecha del Acta de Recepción Provisional, EL CONTRATISTA se obliga a conservar la obra por su exclusiva cuenta durante el Plazo de Conservación y Garantía fijado en CIENTO OCHENTA (180) días corridos. Transcurrido este plazo, EL CONTRATISTA solicitará la Recepción definitiva de la obra. De comprobarse el buen estado y correcto funcionamiento de la Obra, se labrará en forma conjunta con la Inspección el Acta correspondiente.
+			<b>CLAUSULA DÉCIMA PRIMERA </b>– Conservación y Recepción de la Obra: Terminados todos los trabajos 
+			del Contrato, EL CONTRATISTA solicitara la Recepción Provisional de la obra. De no existir 
+			observaciones, se labrará el Acta respectiva en forma conjunta con la Inspección. 
+			La Medición Final se realizara de acuerdo con lo establecido en el Pliego Particular de
+			Condiciones. A partir de la fecha del Acta de Recepción Provisional, EL CONTRATISTA se obliga 
+			a conservar la obra por su exclusiva cuenta durante el Plazo de Conservación y Garantía fijado 
+			en CIENTO OCHENTA (180) días corridos. Transcurrido este plazo, EL CONTRATISTA solicitará la
+			Recepción definitiva de la obra. De comprobarse el buen estado y correcto funcionamiento de la
+			Obra, se labrará en forma conjunta con la Inspección el Acta correspondiente.
 		</p>
 
 		<p>
-			CLAUSULA DÉCIMO TERCERA – Incumplimiento del Plazo Contractual por factores climáticos: Cualesquiera sean las condiciones climáticas que imperen en la zona y que no constituyen los supuestos casos de fuerza mayor previstos en la Ley de Obras Públicas, no darán motivos a ampliaciones del plazo fijado para la terminación de los trabajos, debiendo EL CONTRATISTA adoptar las previsiones del caso para mantener las tareas y ampliar, si fuera necesario, la jornada normal de labor al efecto de su estricto cumplimiento, sin que ello dé derecho a modificación de los precios contractuales ni reconocimiento alguno por la adopción de tales medidas. En los casos en que estas condiciones climáticas sean distintas a las normales, LA MUNICIPALIDAD podrá, a su exclusivo    juicio, ponderar las razones que haya tenido EL CONTRATISTA para no dar cumplimiento al plazo contractual.
+			<b>CLAUSULA DÉCIMA SEGUNDA </b>– Incumplimiento del Plazo Contractual por factores climáticos: 
+			Cualesquiera sean las condiciones climáticas que imperen en la zona y que no constituyen los 
+			supuestos casos de fuerza mayor previstos en la Ley de Obras Públicas, no darán motivos a 
+			ampliaciones del plazo fijado para la terminación de los trabajos, debiendo EL CONTRATISTA 
+			adoptar las previsiones del caso para mantener las tareas y ampliar, si fuera necesario, la 
+			jornada normal de labor al efecto de su estricto cumplimiento, sin que ello dé derecho a 
+			modificación de los precios contractuales ni reconocimiento alguno por la adopción de tales 
+			medidas. En los casos en que estas condiciones climáticas sean distintas a las normales,
+			LA MUNICIPALIDAD podrá, a su exclusivo juicio, ponderar las razones que haya tenido 
+			EL CONTRATISTA para no dar cumplimiento al plazo contractual.
 		</p>
 
 		<p>
-			CLAUSULA DÉCIMO CUARTA – Sellado de ley: EL CONTRATISTA se obliga a reponer el Sellado de Ley que le corresponde. 
+			<b>CLAUSULA DÉCIMA TERCERA  </b>– Sellado de ley: EL CONTRATISTA se obliga a reponer el Sellado 
+			de Ley que le corresponde. 
 		</p>
 
 		<p>
-			CLAUSULA DÉCIMO QUINTA – Jurisdicción: Para el caso de litigios, las partes se someten voluntariamente por este acto a la jurisdicción de los Tribunales Ordinarios de la Ciudad de Formosa de la Provincia de Formosa, renunciando a todo otro fuero y jurisdicción, inclusive el Federal.
+			<b>	CLAUSULA DÉCIMA CUARTA </b>– Jurisdicción: Para el caso de litigios, las partes se someten 
+			voluntariamente por este acto a la jurisdicción de los Tribunales Ordinarios de la Ciudad de 
+			Formosa de la Provincia de Formosa, renunciando a todo otro fuero y jurisdicción, 
+			inclusive el Federal.
 		</p>
 
 		<p>
-			CLAUSULA DÉCIMO SEXTA – Para el presente contrato rige las previsiones de Decreto Provincial N° 1203 del año 2.002.
+			<b>CLAUSULA DÉCIMA QUINTA </b>– Para el presente contrato rige las previsiones de Decreto Provincial 
+			N° 1203 del año 2.002.
 		</p>
 
 		<p>
-			CLAUSULA DÉCIMO SEPTIMA – Domicilios especiales: El Municipio fija su domicilio especial en su domicilio legal en calle San Martin 743 y EL CONTRATISTA en calle Avda. Gutnisky N° 4590 Provincia de Formosa – Capital -  Republica Argentina.
+			<b> CLAUSULA DÉCIMA SEXTA </b> – Domicilios especiales: El Municipio fija su domicilio especial en 
+			su domicilio legal en calle San Martin 743 y EL CONTRATISTA en {{ resultado.contratista.domicilio }}.
 		</p>
 
 		<p>
-			En prueba de conformidad las partes suscriben el presente Contrato, en Tres (3) ejemplares de un mismo tenor y efecto, en Ciudad de Formosa, Provincia de Formosa, Republica Argentina, los Veinticinco  (25) días del mes de MARZO del año 2.019.	
+			En prueba de conformidad las partes suscriben el presente Contrato, 
+			en Tres (3) ejemplares de un mismo tenor y efecto, en Ciudad de Formosa,
+			 Provincia de Formosa, Republica Argentina, los ___________________________
+			 días del mes de _______________ del año ____________	
 		</p>
 
 		</div>

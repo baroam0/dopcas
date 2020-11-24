@@ -19,6 +19,7 @@ class ContratoObraForm(forms.ModelForm):
     )
     poliza = forms.CharField(label="Poliza")
     numeropoliza = forms.CharField(label="Numero Poliza")
+    montopoliza = forms.DecimalField(label="Monto Poliza")
     plazo = forms.IntegerField(label="Plazo")
     unidadtiempo = forms.ModelChoiceField(
         label="Unidad de Tiempo",
@@ -41,6 +42,7 @@ class ContratoObraForm(forms.ModelForm):
     analisiprecio = forms.IntegerField(label="Foja Analisis de Precio", required=True)
     plantrabajo = forms.IntegerField(label="Foja Plan de Trabajo", required=True)
     curvainversion = forms.IntegerField(label="Foja Curva de Inversion", required=True)
+    foja_decreto = forms.IntegerField(label="Foja de Decreto", required=True)
 
     def __init__(self, *args, **kwargs):
         super(ContratoObraForm, self).__init__(*args, **kwargs)
@@ -48,12 +50,12 @@ class ContratoObraForm(forms.ModelForm):
     class Meta:
         model = ContratoObra
         fields = ['obra', 'contratista', 'poliza',
-            'numeropoliza', 'plazo', 'unidadtiempo',
+            'numeropoliza', 'montopoliza', 'plazo', 'unidadtiempo',
             'monto', 'inicio_pliegogeneral', 'fin_pliegogeneral',
             'inicio_pliegoparticular', 'fin_pliegoparticular',
             'inicio_pliegotecnico', 'fin_pliegotecnico',
             'plano', 'oferta', 'analisiprecio', 'plantrabajo',
-            'curvainversion' ]
+            'curvainversion', 'foja_decreto']
 
 
 

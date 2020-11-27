@@ -8,7 +8,10 @@ from .models import Contratista
 def listadocontratista(request):
     if "txtbuscar" in request.GET:
         parametro = request.GET.get("txtbuscar")
-        resultados = Contratista.objects.filter(descripcion__contains=parametro)
+        if parametro == "":
+            resultados = Contratista.objects.all().order_by("descripcion")
+        else:
+            resultados = Contratista.objects.filter(descripcion__contains=parametro)
     else:
         resultados = Contratista.objects.all().order_by("descripcion")
     return render(

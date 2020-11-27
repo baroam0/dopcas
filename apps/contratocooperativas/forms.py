@@ -13,15 +13,8 @@ class ContratoCooperativaForm(forms.ModelForm):
         queryset=Contratista.objects.filter(cooperativa=True).order_by("descripcion"),
         label="Cooperativa",
         )
-    poliza = forms.CharField(label="Poliza")
-    numeropoliza = forms.CharField(label="Numero Poliza")
-    tareas = forms.CharField(label="Tareas")
-    plazo = forms.IntegerField(label="Plazo")
-    unidadtiempo = forms.ModelChoiceField(
-        label="Unidad de Tiempo",
-        queryset=UnidadTiempo.objects.all().order_by("descripcion"),
-        required=True
-    )
+    fecha_inicio = forms.DateField(label="Fecha Inicio", required=True)
+    fecha_fin = forms.DateField(label="Fecha Fin", required=True)
     montomensual = forms.DecimalField(label="Monto Mensual")
 
     def __init__(self, *args, **kwargs):
@@ -29,6 +22,5 @@ class ContratoCooperativaForm(forms.ModelForm):
 
     class Meta:
         model = ContratoCooperativa
-        fields = ['descripcion' , 'contratista', 'poliza',
-            'numeropoliza', 'tareas', 'plazo', 'unidadtiempo',
-            'montomensual' ]
+        fields = ['descripcion' , 'contratista', 'fecha_inicio',
+            'fecha_fin', 'montomensual']

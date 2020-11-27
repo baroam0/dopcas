@@ -20,7 +20,7 @@ from apps.cooperativas.views import (listadocontratista,
     nuevocontratista, editarcontratista)
 
 from apps.contratocooperativas.views import (listadocontratocooperativa,
-    nuevocontratocooperativa, editarcontratocooperativa)
+    nuevocontratocooperativa, editarcontratocooperativa, detallecontratocooperativa)
 
 from apps.contratosobras.views import (listadocontratoobra, nuevocontratoobra,
     editarcontratoobra, detallecontratoobra)
@@ -46,7 +46,8 @@ urlpatterns = [
     
     path('listadocontratocooperativa/', listadocontratocooperativa),
     path('nuevocontratocooperativa/', nuevocontratocooperativa),
-    path('editarcontratocooperativa/', editarcontratocooperativa),
+    path('editarcontratocooperativa/<int:pk>', editarcontratocooperativa),
+    path('detallecontratocooperativa/<int:pk>/', detallecontratocooperativa),
 
     path('listadocontratoobra/', listadocontratoobra),
     path('nuevocontratoobra/', nuevocontratoobra),

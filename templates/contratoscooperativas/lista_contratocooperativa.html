@@ -21,6 +21,7 @@
 				<th>Obra</th>
 				<th>Cooperativa</th>
 				<th>Fecha Inicio</th>
+				<th>Fecha Fin</th>
 				<th>Monto Mensual</th>
 				<th>Editar</th>
 				<th>Ver</th>
@@ -28,13 +29,14 @@
 		
 		
 			{% for resultado in resultados %}
-				<<tr>
-					<td>{{resultado.monotributista.apellido.upper}}, {{resultado.monotributista.nombre.upper}}  </td>
+				<tr>
+					<td>{{resultado.descripcion.upper}}</td>
+					<td>{{resultado.contratista.descripcion.upper}}</td>
 					<td>{{resultado.fecha_inicio}}  </td>
 					<td>{{resultado.fecha_fin}}  </td>
-					<td>{{resultado.monto_mensual}}  </td>
-					<td><a href="/editarcontratomonotributista/{{resultado.pk}}">Editar</a> </td>
-					<td><a href="/detallecontrato/{{resultado.pk}}">Ver</a> </td>
+					<td>{{resultado.montomensual}}  </td>
+					<td><a href="/editarcontratocooperativa/{{resultado.pk}}">Editar</a> </td>
+					<td><a href="/detallecontratocooperativa/{{resultado.pk}}">Ver</a> </td>
 				</tr>
 			{% endfor %}
 

@@ -21,22 +21,22 @@
 		<p> En la Ciudad de Formosa Provincia del mismo nombre, por una parte la Municipalidad de la Ciudad 
 			de Formosa con domicilio en Calle San Martin 743 de la Ciudad de Formosa representada legalmente
 			en este acto por el Jefe de Gabinete DR. MAURICIO HERNAN NADALICH, titular del  D.N.I. Nº 26.694.334, 
-			de ahora en mas LA MUNICIPALIDAD y por la otra parte la Cooperativa de Trabajo 
-			“FUERZA Y RESPONSABILIDAD LIMITADA”, representada en este acto por su presidente,
-			la SRA. ZALAZAR MARIA BELEN DNI Nº 40.488.706, con domicilio legal en  Avda., Néstor Kirchner 3621 de 
-			la ciudad de Formosa, desde ahora EL PRESTADOR, convienen celebrar el presente 
+			de ahora en mas LA MUNICIPALIDAD y por la otra parte la <b> {{ resultado.contratista.descripcion.upper }} </b> , 
+			representada en este acto por su presidente, <b> {{ resultado.contratista.titular.upper }}  ,
+			DNI Nº {{resultado.contratista.doctitular}} </b>, con domicilio legal en {{resultado.contratista.domicilio.upper}}, 
+			desde ahora EL PRESTADOR, convienen celebrar el presente 
 			CONTRATO DE LOCACION DE SERVICIOS, el cual regirá por las normas del Código Civil Argentino y 
 			las Cláusulas Particulares que se transcribe a continuación: 
 		</p>
 		
 		<p> PRIMERA: Objeto: LA MUNICIPALIDAD encomienda a EL PRESTADOR a realizar tareas de
-			PINTURA DE POSTES DE ILUMINACIÓN A RAZÓN DE 158 (CIENTO CINCUENTA Y OCHO).
+			<b>{{resultado.descripcion.upper}} .</b>
 		</p>
 		
 		<p>
-			SEGUNDA: Monto del Contrato: EL MONTO TOTAL DEL CONTRATO SE ACUERDA EN LA suma de
-			PESOS: UN MILLÓN OCHENTA  MIL CON 00/100 CENTAVOS ($ 1.080.000,00).
-			La Municipalidad abonará mensualmente la suma de PESOS: TRESCIENTOS SESENTA MIL CON 00/100  ($ 360.000,00),
+			SEGUNDA: Monto del Contrato: EL MONTO TOTAL DEL CONTRATO SE ACUERDA EN LA suma de <b>
+			PESOS: {{letramontocontrato}} ($ {{montocontrato}}) </b>.
+			La Municipalidad abonará mensualmente la suma de <b> PESOS: {{letramontomensual}} ($ {{resultado.montomensual}}),</b>
 			estableciéndose como “Valor Mes” unitario expresado en esta cláusula.
 		</p>
 		
@@ -63,7 +63,7 @@
 		</p>
 		
 		<p>
-			SÉPTIMA: Vigencia del Contrato: Se establece como plazo de vigencia del Contrato desde el día 1 de OCTUBRE de 2020 al 31 de DICIEMBRE de 2020, pudiendo el mismo ser ampliado por igual periodo si las necesidades de LA MUNICIPALIDAD así lo requieren y con el consentimiento fehaciente de ambas partes.
+			SÉPTIMA: Vigencia del Contrato: Se establece como plazo de vigencia del Contrato desde el día {{ resultado.fecha_inicio|date:"d F Y" }} al {{resultado.fecha_fin|date:"d F Y"}}, pudiendo el mismo ser ampliado por igual periodo si las necesidades de LA MUNICIPALIDAD así lo requieren y con el consentimiento fehaciente de ambas partes.
 		</p>
 		
 		<p>
@@ -82,8 +82,14 @@
 			de la Provincia, la AFIP y la  Dirección General de Rentas de la Provincia de Formosa en legal forma, siendo 
 			su exclusiva responsabilidad la realización de los pertinentes aportes, contribuciones y toma de los Seguros 
 			de Accidente Personal; 
-			b) LA MUNICIPALIDAD se exime de responsabilidad ante cualquier accidente que cause daños a peatones, otros vehículos en la vía pública y/o bienes de terceros. EL PRESTADOR será total y absolutamente responsable, de los accidentes donde estuviesen involucrados los asociados u los obreros que se encuentren bajo su dependencia y los eventuales daños y perjuicios que causen estos últimos a la integridad física de terceros y/o bienes;
-			c)  A los efectos de una mayor comprensión de la determinación del lugar de la prestación del servicio, ambas partes en este acto, coinciden y admiten conocer el área donde se efectivizará la prestación del servicio. LA MUNICIPALIDAD, por razones de necesidad y urgencia, se reserva el derecho de asignar un nuevo lugar de cumplimiento de las tareas objeto del presente contrato.
+			b) LA MUNICIPALIDAD se exime de responsabilidad ante cualquier accidente que cause daños a peatones, otros vehículos
+			en la vía pública y/o bienes de terceros. EL PRESTADOR será total y absolutamente responsable, de los accidentes donde 
+			estuviesen involucrados los asociados u los obreros que se encuentren bajo su dependencia y los eventuales daños y 
+			perjuicios que causen estos últimos a la integridad física de terceros y/o bienes;
+			c)  A los efectos de una mayor comprensión de la determinación del lugar de la prestación del servicio, ambas partes 
+			en este acto, coinciden y admiten conocer el área donde se efectivizará la prestación del servicio.
+			LA MUNICIPALIDAD, por razones de necesidad y urgencia, se reserva el derecho de asignar un nuevo lugar de cumplimiento
+			de las tareas objeto del presente contrato.
 		</p>
 
 		<p>

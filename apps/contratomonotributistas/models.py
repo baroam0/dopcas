@@ -13,6 +13,7 @@ class ContratoMonotributista(models.Model):
     monto_mensual = models.DecimalField(decimal_places=2, max_digits=15)
     decreto = models.CharField(max_length=15, null=True, blank=True)
     expediente = models.CharField(max_length=15, null=True, blank=True)
+    cumplimentado = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.monotributista)

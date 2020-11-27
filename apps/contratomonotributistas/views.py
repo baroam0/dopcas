@@ -66,7 +66,8 @@ def listadocontratomonotributista(request):
         parametro = request.GET.get("txtbuscar")
         resultados = ContratoMonotributista.objects.filter(monotributista__apellido__contains=parametro)
     else:
-        resultados = ContratoMonotributista.objects.all().order_by("fecha_inicio")
+        #resultados = ContratoMonotributista.objects.all().order_by("fecha_inicio")
+        resultados = ContratoMonotributista.objects.filter(cumplimentado=False)
     return render(
         request,
         "contratomonotributistas/lista_contratomonotributista.html",

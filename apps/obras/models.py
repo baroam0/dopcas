@@ -23,6 +23,9 @@ class Obra(models.Model):
     plazo = models.IntegerField(null=True, blank=True)
     unidadtiempo = models.ForeignKey(UnidadTiempo, on_delete=models.CASCADE, null=True, blank=True)
     monto = models.DecimalField(decimal_places=2, max_digits=10)
+    fecha_recepcion_provisoria = models.DateField(null=True, blank=True)
+    fecha_recepcion_definitiva = models.DateField(null=True, blank=True)
+    concluida = models.BooleanField(default=False)
 
     def __str__(self):
         return self.descripcion

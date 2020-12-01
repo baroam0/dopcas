@@ -82,31 +82,4 @@ def editarcontratoobra(request, pk):
         )
 
 
-def generaresolucion(request):
-    obras = ContratoMonotributista.objects.all().order_by("monotributista")
-    return render(
-        request,
-        'monotributistas/generaf16b.html',
-        {
-            "contratos": contratos,
-            "meses": meses
-        })
-
-
-def resolucion(request,cnt,mes):
-    contrato = ContratoMonotributista.objects.get(pk=cnt)
-    mes = Mes.objects.get(pk=mes)
-    return render(
-        request,
-        'monotributistas/f16b.html',
-        {
-            "contrato": contrato,
-            "mes": mes
-        }
-    )
-
-
-
-
-
 # Create your views here.

@@ -66,6 +66,7 @@ urlpatterns = [
     path('nuevomonotributista/', nuevomonotributista),
     path('editarmonotributista/<int:pk>', editarmonotributista),
     path('generaf16b/', generaf16b),
-    path('f16b/<int:cnt>/<int:mes>', f16b)
+    path('f16b/<int:cnt>/<int:mes>', f16b),
+    
 ]
 

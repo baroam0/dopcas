@@ -1,6 +1,8 @@
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
+from lib.numeroatexto import numtxt
+from .forms import CertificadoForm
 from .models import Certificado
 
 
@@ -12,7 +14,7 @@ def listadocertificadoobra(request):
         resultados = Certificado.objects.all()
     return render(
         request,
-        "certificados/lista_contratoobra.html",
+        "certificados/lista_certificadoobra.html",
         {
             "resultados": resultados
         })
@@ -20,15 +22,15 @@ def listadocertificadoobra(request):
 
 def nuevocertificadoobra(request):
     if request.POST:
-        form = ContratoObraForm(request.POST)
+        form = CertificadoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/listadocontratoobra')
+            return redirect('/listadocertificadoobra')
         else:
-            return render(request, 'contratosobras/editar_contratoobra.html', {"form": form})
+            return render(request, 'certificados/editar_certificadoobra.html', {"form": form})
     else:
-        form = ContratoObraForm()
-        return render(request, 'contratosobras/editar_contratoobra.html', {"form": form})
+        form = CertificadoForm()
+        return render(request, 'certificados/editar_certificadoobra.html', {"form": form})
 
 
 def editarcertificadoobra(request, pk):
@@ -52,8 +54,19 @@ def editarcertificadoobra(request, pk):
         )
 
 
-
-
-
+def detalleresolucionobra(request, pk):
+    resultados = Certificado.objects.get(pk=pk)
+    
+    letramonto = numtxt(resultados.monto)
+    
+    return render(
+        request,
+        'certificados/resolucion.html',
+        {
+            "resultados": resultados,
+            "letramonto": letramonto
+        }
+        
+    )
 
 # Create your views here.

@@ -28,7 +28,7 @@ class Obra(models.Model):
     concluida = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.descripcion
+        return self.descripcion.upper()
     
     class Meta:
         verbose_name_plural = "Obras"

@@ -1,0 +1,44 @@
+
+{% extends "base.html" %}
+
+{% block content%}
+	<form action="/listadocontratoobra" method="GET">
+
+		<br><br>
+		<input id="txtbuscar" name="txtbuscar">
+		<br>
+		<br>
+
+		<button type="submit">Buscar</button>
+
+		<button type="button" onclick="location.href='/nuevocertificadoobra';">Nuevo</button>
+
+		<br>
+		<br>
+
+		<table style="width:100%">
+			<thead>
+				<th>Expediente</th>
+				<th>Certificado Nº</th>
+				<th>Obra</th>
+				<th>Contratista</th>
+				<th>Monto</th>
+				<th>Editar</th>
+				<th>Ver</th>
+			</thead>
+
+			{% for resultado in resultados %}
+				<tr>
+					<td>{{resultado.obra.expediente.upper}} </td>
+					<td>{{resultado.numero}} </td>
+					<td>{{resultado.obra.descripcion.upper}} </td>
+					<td>{{resultado.contratista.descripcion.upper}}  </td>
+					<td>{{resultado.monto}}  </td>
+					<td><a href="/editarcontratoobra/{{resultado.pk}}">Editar</a> </td>
+					<td><a href="/detalleresolucionobra/{{resultado.pk}}">Ver</a> </td>
+				</tr>
+			{% endfor %}
+
+		  </table>
+	</form>
+{% endblock %}

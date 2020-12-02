@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from apps.certificados.views import (listadocertificadoobra,
+    nuevocertificadoobra, detalleresolucionobra)
+
 from apps.cooperativas.views import (listadocontratista,
     nuevocontratista, editarcontratista)
 
@@ -68,5 +71,8 @@ urlpatterns = [
     path('generaf16b/', generaf16b),
     path('f16b/<int:cnt>/<int:mes>', f16b),
     
+    path('listadocertificadoobra/', listadocertificadoobra),
+    path('nuevocertificadoobra/', nuevocertificadoobra),
+    path('detalleresolucionobra/<int:pk>', detalleresolucionobra),
 ]
 

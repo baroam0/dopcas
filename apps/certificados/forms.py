@@ -1,13 +1,16 @@
 
 from django import forms
 
-from .models import Monotributista
+
+from apps.cooperativas.models import Contratista
+from apps.obras.models import Obra
+from .models import Certificado
 
 
 class CertificadoForm(forms.ModelForm):
 
     obra = forms.ModelChoiceField(
-        queryset=obra.objects.all(),
+        queryset=Obra.objects.filter(concluida=False),
         label="Obra")
 
     contratista = forms.ModelChoiceField(
@@ -24,10 +27,9 @@ class CertificadoForm(forms.ModelForm):
 
 
     def __init__(self, *args, **kwargs):
-        super(MonotributistaForm, self).__init__(*args, **kwargs)
+        super(CertificadoForm, self).__init__(*args, **kwargs)
 
     class Meta:
-        model = Monotributista
+        model = Certificado
         fields = ['obra', 'contratista', 'numero', 'monto', 'expediente']
-
 

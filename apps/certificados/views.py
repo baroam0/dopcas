@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from lib.numeroatexto import numtxt
 from .forms import CertificadoForm
 from .models import Certificado
+from apps.contratosobras.models import ContratoObra
 
 
 def listadocertificadoobra(request):
@@ -56,15 +57,17 @@ def editarcertificadoobra(request, pk):
 
 def detalleresolucionobra(request, pk):
     resultados = Certificado.objects.get(pk=pk)
-    
+    montocontrato = ContratoObra.objects.get(obra=resultados.obra.pk)
     letramonto = numtxt(resultados.monto)
-    
+    avance = float(resultados.monto) / float(montocontrato.monto)
+
     return render(
         request,
         'certificados/resolucion.html',
         {
             "resultados": resultados,
-            "letramonto": letramonto
+            "letramonto": letramonto,
+            "avance": avance
         }
         
     )

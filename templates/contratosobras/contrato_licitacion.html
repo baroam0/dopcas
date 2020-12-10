@@ -25,7 +25,7 @@
 			Entre la Municipalidad de la ciudad de Formosa en adelante LA MUNICIPALIDAD, representada 
 			en este acto por el <b> DR. MAURICIO HERNAN NADALICH, D.N.I Nº 26.694.334 </b> en carácter de
 			Jefe de Gabinete de la Municipalidad de la Ciudad de Formosa, con domicilio legal en su sede,
-			sita en San Martín Nº 743, de la Ciudad de Formosa, Departamento Formosa, Departamento Formosa,
+			sita en San Martín Nº 743, de la Ciudad de Formosa, Departamento Formosa,
 			Provincia de Formosa, por una parte; y por la otra la Empresa <b>
 			{{resultado.contratista.descripcion.upper }}  </b> en adelante “EL CONTRATISTA”,
 			representada por <b> {{ resultado.contratista.titular.upper }}  ,
@@ -37,7 +37,7 @@
 		<p>
 			<b>CLAUSULA PRIMERA </b> – 
 			Objeto: EL CONTRATISTA se obliga a ejecutar la Obra: <b>
-			“{{ resultado.obra.descripcion }}”</b>, adjudicada por <b> Decreto Nº {{ resultado.obra.decreto }} </b>, 
+			“{{ resultado.obra.descripcion.upper }}”</b>, adjudicada por <b> Decreto Nº {{ resultado.obra.decreto }} </b>, 
 			de conformidad con las actuaciones obrantes en el <b> Expediente "{{resultado.obra.expediente.upper}}” ,
 			{{ resultado.obra.tipo_licitacion.descripcion.upper }} Nº {{resultado.obra.numero_licitacion}}.</b>
 		</p>
@@ -74,9 +74,9 @@
 			<b>CLAUSULA CUARTA</b> – Sistema de Contratación - Monto: La obra se contrata por el 
 			sistema de Unidad de Medida y Precios Unitarios. El trabajo se realizara por el monto
 			siguiente:
-			<b> El IMPORTE NETO del monto cotizado: PESOS: {{letramontoneto}} ({{ montoneto }}); 
-			IMPUESTO AL VALOR AGREGADO (I.V.A – 21%)  PESOS: {{letramontoiva}} ({{montoiva}}); 
-			MONTO TOTAL de la Obra:  PESOS: {{letramonto}}  ({{ resultado.monto }}) </b> . 
+			<b> El IMPORTE NETO del monto cotizado: PESOS: {{letramontoneto}} ( $ {{ montoneto }}); 
+			IMPUESTO AL VALOR AGREGADO (I.V.A – 21%)  PESOS: {{letramontoiva}} ( $ {{montoiva}}); 
+			MONTO TOTAL de la Obra:  PESOS: {{letramonto}}  ( $ {{ resultado.monto }}) </b> . 
 			En definitiva del volumen de obra ejecutada y medida, condicionado por reajustes de 
 			cómputos y / o modificaciones de Obra debidamente autorizados.
 		</p>
@@ -85,7 +85,7 @@
 			<b>CLAUSULA QUINTA</b> – Plazo de Ejecución de Obra: EL CONTRATISTA deberá concluir los 
 			trabajos contratados en el plazo de {{letraplazo.upper}} ({{resultado.plazo}}) 
 			{{resultado.unidadtiempo}} corridos, a computar desde la fecha que se 
-			firme el Acta de Iniciación de Obra.
+			firme el Acta de Inicio de Obra.
 		</p>
 
 		<p>
@@ -116,7 +116,7 @@
 
 		<p>
 			<b>CLAUSULA NOVENA </b>– Garantía de Contrato: EL CONTRATISTA constituye en este acto Garantía de 
-			Contrato por un monto de <b> PESOS: {{letramontopoliza}} ({{resultado.montopoliza}})  mediante Póliza 
+			Contrato por un monto de <b> PESOS: {{letramontopoliza}} ( $ {{resultado.montopoliza}})  mediante Póliza 
 			de Seguro de Caución Nº {{resultado.numeropoliza}}, de {{resultado.poliza.upper}} ,</b> 
 			en cumplimiento del requisito exigido en el Pliego Particular de Condiciones.
 		</p>

@@ -19,9 +19,9 @@ class ContratoMonotributistaForm(forms.ModelForm):
     fecha_inicio = forms.DateField(label="Fecha Inicio", required=True)
     fecha_fin = forms.DateField(label="Fecha Fin", required=True)
     monto_mensual = forms.DecimalField(label='Monto Mensual')
-    decreto = forms.CharField(label="Decreto")
-    expediente = forms.CharField(label="Expediente")
-    cumplimentado = forms.BooleanField(label='Cumplimentado')
+    decreto = forms.CharField(label="Decreto", required=False)
+    expediente = forms.CharField(label="Expediente", required=False)
+    cumplimentado = forms.BooleanField(label='Cumplimentado', required=False)
 
     def __init__(self, *args, **kwargs):
         super(ContratoMonotributistaForm, self).__init__(*args, **kwargs)

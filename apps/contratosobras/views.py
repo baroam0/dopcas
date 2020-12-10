@@ -1,4 +1,5 @@
 
+import locale
 from django.shortcuts import render, redirect
 
 from apps.obras.models import Obra
@@ -8,14 +9,24 @@ from lib.numeroatexto import numtxt, numerotxt
 
 
 def detallecontratoobra(request, pk):
+    locale.setlocale(locale.LC_ALL, '')
+    
     resultado = ContratoObra.objects.get(pk=pk)
     montoiva = resultado.monto * 21 / 121
+    montoiva = round(montoiva,2)
     letramontoiva = numtxt(montoiva)
+    
+    f_montoiva =  f'{montoiva:n}'
+    
     letramonto = numtxt(resultado.monto)
     montoneto = resultado.monto - montoiva
+    
+    f_montoneto = f'{montoneto:n}'
+    
     letramontoneto = numtxt(montoneto)
     letraplazo = numerotxt(resultado.plazo)
     letramontopoliza = numtxt(resultado.montopoliza)
+
     
 
     return render(request,
@@ -23,9 +34,9 @@ def detallecontratoobra(request, pk):
         {
             "resultado": resultado,
             "letramontoiva": letramontoiva,
-            "montoiva": montoiva,
+            "montoiva": f_montoiva,
             "letramonto": letramonto,
-            "montoneto": montoneto,
+            "montoneto": f_montoneto,
             "letramontoneto": letramontoneto,
             "letraplazo": letraplazo,
             "letramontopoliza": letramontopoliza

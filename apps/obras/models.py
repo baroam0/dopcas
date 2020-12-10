@@ -8,7 +8,7 @@ class TipoLicitacion(models.Model):
     descripcion = models.CharField(max_length=500, null=False, blank=False)
     
     def __str__(self):
-        return self.descripcion
+        return self.descripcion.upper()
     
     class Meta:
         verbose_name_plural = "Tipos de Licitacion"

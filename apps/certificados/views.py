@@ -56,20 +56,31 @@ def editarcertificadoobra(request, pk):
 
 
 def detalleresolucionobra(request, pk):
-    resultados = Certificado.objects.get(pk=pk)
-    montocontrato = ContratoObra.objects.get(obra=resultados.obra.pk)
-    letramonto = numtxt(resultados.monto)
-    avance = float(resultados.monto) / float(montocontrato.monto)
-
-    return render(
-        request,
-        'certificados/resolucion.html',
-        {
-            "resultados": resultados,
-            "letramonto": letramonto,
-            "avance": avance
-        }
+    try:
+        resultados = Certificado.objects.get(pk=pk)
+        montocontrato = ContratoObra.objects.get(obra=resultados.obra.pk)
+        letramonto = numtxt(resultados.monto)
+        avance = float(resultados.monto) / float(montocontrato.monto)
+        avance = round(float(avance * 100),2)
         
-    )
+        return render(
+            request,
+            'certificados/resolucion.html',
+            {
+                "resultados": resultados,
+                "letramonto": letramonto,
+                "avance": avance
+            }
+        )
+         
+    except:
+        return render(
+            request,
+            'certificados/404.html',
+        )
+        
+    
+
+    
 
 # Create your views here.

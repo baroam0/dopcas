@@ -26,21 +26,24 @@ def detallecontratoobra(request, pk):
     letramontoneto = numtxt(montoneto)
     letraplazo = numerotxt(resultado.plazo)
     letramontopoliza = numtxt(resultado.montopoliza)
-
     
+    monto = f'{resultado.monto:n}'
+    
+    montopoliza = f'{resultado.montopoliza:n}'
 
     return render(request,
         'contratosobras/contrato_licitacion.html',
         {
             "resultado": resultado,
+            "monto": monto,
             "letramontoiva": letramontoiva,
             "montoiva": f_montoiva,
             "letramonto": letramonto,
             "montoneto": f_montoneto,
             "letramontoneto": letramontoneto,
             "letraplazo": letraplazo,
-            "letramontopoliza": letramontopoliza
-
+            "letramontopoliza": letramontopoliza,
+            "montopoliza": montopoliza
         }
     )
 

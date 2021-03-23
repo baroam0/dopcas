@@ -17,11 +17,11 @@ def detallecontratocooperativa(request, pk):
     resultado = ContratoCooperativa.objects.get(pk=pk)
     plazo = totalmes(resultado.fecha_inicio, resultado.fecha_fin)
     montocontrato = plazo * resultado.montomensual
-    montocontrato = round(montocontrato,2)
+    #montocontrato = round(montocontrato,2)
     f_montocontrato = f'{montocontrato:n}'
 
-    montomensual = round(resultado.montomensual,2)
-    f_montomensual = f'{montomensual:n}'
+    #montomensual = round(resultado.montomensual,2)
+    f_montomensual = f'{resultado.montomensual:n}'
 
     letramontomensual = numtxt(resultado.montomensual)
     letramontocontrato = numtxt(montocontrato)

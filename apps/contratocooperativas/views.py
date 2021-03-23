@@ -1,5 +1,7 @@
 
+import locale
 from django.shortcuts import render, redirect
+
 
 from .forms import ContratoCooperativaForm
 from .models import ContratoCooperativa
@@ -10,9 +12,12 @@ from lib.cuentames import totalmes
 
 
 def detallecontratocooperativa(request, pk):
+    locale.setlocale(locale.LC_ALL, '')
+
     resultado = ContratoCooperativa.objects.get(pk=pk)
     plazo = totalmes(resultado.fecha_inicio, resultado.fecha_fin)
     montocontrato = plazo * resultado.montomensual
+    f_montocontrato = f'{montocontrato:n}'
     letramontomensual = numtxt(resultado.montomensual)
     letramontocontrato = numtxt(montocontrato)
     letraplazo = numerotxt(int(plazo))
@@ -23,7 +28,7 @@ def detallecontratocooperativa(request, pk):
         {
             "resultado": resultado,
             "plazo": plazo,
-            "montocontrato": montocontrato,
+            "montocontrato": f_montocontrato,
             "letramontocontrato": letramontocontrato,
             "letramontomensual" : letramontomensual,
             "letraplazo": letraplazo

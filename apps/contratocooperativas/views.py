@@ -21,8 +21,7 @@ def detallecontratocooperativa(request, pk):
     f_montocontrato = f'{montocontrato:n}'
 
     montomensual = round(resultado.montomensual,2)
-    montomensual = montomensual
-    montomensual = f'{montomensual:n}'
+    f_montomensual = f'{montomensual:n}'
 
     letramontomensual = numtxt(resultado.montomensual)
     letramontocontrato = numtxt(montocontrato)
@@ -35,7 +34,7 @@ def detallecontratocooperativa(request, pk):
             "resultado": resultado,
             "plazo": plazo,
             "montocontrato": f_montocontrato,
-            "montomensual": montomensual,
+            "montomensual": f_montomensual,
             "letramontocontrato": letramontocontrato,
             "letramontomensual" : letramontomensual,
             "letraplazo": letraplazo

@@ -17,8 +17,12 @@
             border-collapse: collapse;
 			text-align: center;
         }
+
+        body {
+            font-size: 150%;
+        }
 	</style>
-	
+
 	<body>
 
 		<div class="page">
@@ -28,12 +32,12 @@
 			<br>
 
 			<h3>ACTA DE RECEPCI&Oacute;N DE SERVICIOS</h3>
-			
-			En la Ciudad de Formosa, siendo las 10:00 horas, del día 04 de Enero de 2021 
+
+			En la Ciudad de Formosa, siendo las 10:00 horas, del día 01 de Febrero de 2021
 			y con presencia del Director de Obras Públicas Sr. ING. NORBERTO DONATO JOFRÉ,
-			se recepcionan los servicios correspondientes al mes de {{mes}} de 2020 cuyas
-			características se detallan a continuación y que correspondan al Expediente {{contrato.expediente.upper}} - 
-			Decreto Nº {{ contrato.decreto }}
+			se recepcionan los servicios correspondientes al mes de {{mes}} de 2021 cuyas
+			características se detallan a continuación y que correspondan al Expediente ___________/21 -
+			Decreto Nº  __________/21
 
 			<br>
 			<br>
@@ -48,18 +52,18 @@
 				<tr>
 					<td>{{contrato.monotributista.apellido.upper}}, {{contrato.monotributista.nombre.upper}}</td>
 					<td>{{contrato.tipocontrato.tareascontrato}}  </td>
-					<td>{{contrato.monto_mensual}}  </td>
+					<td>$ {{contrato.monto_mensual}}  </td>
 				</tr>
 
 				<tr>
 					<td>Total</td>
 					<td>&nbsp;</td>
-					<td>{{contrato.monto_mensual}}</td>
+					<td>$ {{contrato.monto_mensual}}</td>
 				</tr>
 			</table>
 
 			<br>
-  
+
 			Se deja constancia que los servicios que se detallan han sido realizados y controlados a conformidad del
 			responsable que suscribe la presente.
 

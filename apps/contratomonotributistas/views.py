@@ -1,4 +1,5 @@
 
+import locale
 from django.shortcuts import render, redirect
 
 from .forms import ContratoMonotributistaForm
@@ -10,6 +11,8 @@ from lib.cuentames import totalmes
 
 
 def detallecontrato(request, pk):
+    locale.setlocale(locale.LC_ALL, '')
+
     resultado = ContratoMonotributista.objects.get(pk=pk)
     tipocontrato = TipoContrato.objects.get(pk=int(resultado.tipocontrato.pk))
     plazo = totalmes(resultado.fecha_inicio, resultado.fecha_fin)
@@ -17,7 +20,10 @@ def detallecontrato(request, pk):
     letramontomensual = numtxt(resultado.monto_mensual)
     letramontocontrato = numtxt(montocontrato)
     letraplazo = numerotxt(int(plazo))
-    
+
+    f_montocontrato =  f'{montocontrato:n}'
+    f_monto_mensual = f'{resultado.monto_mensual:n}'
+        
     if tipocontrato.descripcion == "Contrato Administrativo":
         return render(
             request,
@@ -25,7 +31,8 @@ def detallecontrato(request, pk):
             {
                 "resultado": resultado,
                 "plazo": plazo,
-                "montocontrato": montocontrato,
+                "montocontrato": f_montocontrato,
+                "montomensual": f_monto_mensual,
                 "letramontocontrato": letramontocontrato,
                 "letramontomensual" : letramontomensual,
                 "letraplazo": letraplazo
@@ -39,7 +46,8 @@ def detallecontrato(request, pk):
             {
                 "resultado": resultado,
                 "plazo": plazo,
-                "montocontrato": montocontrato,
+                "montocontrato": f_montocontrato,
+                "montomensual": f_monto_mensual,
                 "letramontocontrato": letramontocontrato,
                 "letramontomensual" : letramontomensual,
                 "letraplazo": letraplazo
@@ -53,7 +61,8 @@ def detallecontrato(request, pk):
             {
                 "resultado": resultado,
                 "plazo": plazo,
-                "montocontrato": montocontrato,
+                "montocontrato": f_montocontrato,
+                "montomensual": f_monto_mensual,
                 "letramontocontrato": letramontocontrato,
                 "letramontomensual" : letramontomensual,
                 "letraplazo": letraplazo
